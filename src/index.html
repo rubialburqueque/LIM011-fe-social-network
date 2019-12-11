@@ -4,33 +4,56 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Red Social</title>
+  <title>GirlAsk</title>
+  <link rel="stylesheet" href="fonts/style.css">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class = "total">
-      <!--aside class = "aside aside-1"></aside-->
     <section class = "medio">
-      <img src = "../imagen/computadora.png" alt="" class = "img-principal"/>
       <section class = "registrar">
-        <h2> < codebook > </h2>
-        <p>!Bienvenida, Coder!</p>
-        <input type = "text" placeholder = "email"><br/>
-        <input type = "text" placeholder = "contraseña"><br/>
-        <button>log in</button>
+        <h2> <img src = "img/logo2.png" > </h2>
+        <main class="pantalla">
+          <header class="container-header">
+            <span class="icon-search"></span>
+              <input list="foro-name" type="text" id="busqueda-tema" class="filtro"  placeholder="Busca tema aqui">
+              <datalist id="foro-name"></datalist>
+              <nav>
+                  <button class="button-f" id="boton-home">HOME</button>
+                  <button class="button-f" id="boton-foro">FORO</button>
+                  <button class="button-f" id="boton-contactanos">CONTACTANOS</button>
+              </nav>
+          </header>
+
+        <p class="titulo">!Bienvenida!</p>
+        <form id="log">
+          <span class="icon-user"></span>
+          </br>
+          <input id="username" type="text" name="user" placeholder="Ingresar usuario aquí">
+          </br>
+          <span class="icon-key"></span>
+          </br>
+          <input id="password" type="password" name="password" placeholder="Ingresar contraseña aquí">
+        </form>
         <p>O bien ingresa con ...</p>
-        <img src = "../imagen/face.jpg" class = "social"/> 
-        <img src = "../imagen/google.jpg" class = "social1"/>
-        <p>No tienes cuenta? <a href="#">Registrate</a> </p>
+        </br>
+        <span class="icon-google"></span>
+        <span class="icon-facebook"></span>
+        <span class="icon-twitter"></span>
+        </br>
+        </br>
+        <input id="login" type="button" value="INGRESA" class="button-w">
+        <input id="register" type="button" value="REGISTRATE" class="button-f">
       </section>
-      <section>
-        
-      </section>
-      
+      <img src = "img/computadora.png" alt="" class = "img-principal"/>
     </section>
-    <aside class = "aside aside-2">.</aside>
   </div>
-  
+  <!--Section footer-->
+<footer class="footer">
+  <span>
+      © Copyright Producto exclusivo de Centro Emergencia Mujer. Todos los derechos reservados.
+  </span>
+</footer>
   <script type="module" src="index.js"></script>
 </body>
 </html> 
