@@ -1,10 +1,16 @@
-import { correctName } from './function.js';
+import { correctRegiste } from './function.js';
 
-const nameRegister = document.getElementById('name')
-    /* const elementsRegister = formRegister.elements; */
+const elementsRegister = formRegister.elements;
+console.log(elementsRegister);
+console.log(elementsRegister.name.value);
 
 document.getElementById('formRegister').addEventListener('submit', (event) => {
-    console.log('ingresa al button');
-    correctName(nameRegister.value);
     event.preventDefault();
+    console.log('ingresa al button');
+    correctRegiste(elementsRegister.name.value,
+        elementsRegister.lastName.value,
+        elementsRegister.email.value,
+        elementsRegister.brithday.value,
+        elementsRegister.password.value,
+        elementsRegister.confirmPassword.value);
 })
