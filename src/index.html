@@ -1,59 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>GirlAsk</title>
-  <link rel="stylesheet" href="fonts/style.css">
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <div class = "total">
-    <section class = "medio">
-      <section class = "registrar">
-        <h2> <img src = "img/logo2.png" > </h2>
-        <main class="pantalla">
-          <header class="container-header">
-            <span class="icon-search"></span>
-              <input list="foro-name" type="text" id="busqueda-tema" class="filtro"  placeholder="Busca tema aqui">
-              <datalist id="foro-name"></datalist>
-              <nav>
-                  <button class="button-f" id="boton-home">HOME</button>
-                  <button class="button-f" id="boton-foro">FORO</button>
-                  <button class="button-f" id="boton-contactanos">CONTACTANOS</button>
-              </nav>
-          </header>
 
-        <p class="titulo">!Bienvenida!</p>
-        <form id="log">
-          <span class="icon-user"></span>
-          </br>
-          <input id="username" type="text" name="user" placeholder="Ingresar usuario aquí">
-          </br>
-          <span class="icon-key"></span>
-          </br>
-          <input id="password" type="password" name="password" placeholder="Ingresar contraseña aquí">
-        </form>
-        <p>O bien ingresa con ...</p>
-        </br>
-        <span class="icon-google"></span>
-        <span class="icon-facebook"></span>
-        <span class="icon-twitter"></span>
-        </br>
-        </br>
-        <input id="login" type="button" value="INGRESA" class="button-w">
-        <input id="register" type="button" value="REGISTRATE" class="button-f">
-      </section>
-      <img src = "img/computadora.png" alt="" class = "img-principal"/>
-    </section>
-  </div>
-  <!--Section footer-->
-<footer class="footer">
-  <span>
-      © Copyright Producto exclusivo de Centro Emergencia Mujer. Todos los derechos reservados.
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>GirlAsk</title>
+    <link rel="stylesheet" href="fonts/style.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="total">
+        <section class="medio">
+            <section class="registrar">
+                <h2> <img src="img/logo2.png"> </h2>
+                <main class="pantalla">
+                    <header class="container-header">
+                        <span class="icon-search"></span>
+                        <input list="foro-name" type="text" id="busqueda-tema" class="filtro" placeholder="Busca tema aqui">
+                        <datalist id="foro-name"></datalist>
+                        <nav>
+                            <button class="button-f" id="boton-home">HOME</button>
+                            <button class="button-f" id="boton-foro">FORO</button>
+                            <button class="button-f" id="boton-contactanos">CONTACTANOS</button>
+                        </nav>
+                    </header>
+
+                    <p class="titulo">!Bienvenida!</p>
+                    <form id="log">
+                        <span class="icon-user"></span>
+                        </br>
+                        <input id="username" type="text" name="user" placeholder="Ingresar usuario aquí">
+                        </br>
+                        <span class="icon-key"></span>
+                        </br>
+                        <input id="password" type="password" name="password" placeholder="Ingresar contraseña aquí">
+                    </form>
+                    <p>O bien ingresa con ...</p>
+                    </br>
+                    <span class="icon-google"></span>
+                    <span class="icon-facebook"></span>
+                    <span class="icon-twitter"></span>
+                    </br>
+                    </br>
+                    <input id="login" type="button" value="INGRESA" class="button-w">
+                    <input id="register" type="button" value="REGISTRATE" class="button-f">
+            </section>
+            <img src="img/computadora.png" alt="" class="img-principal" />
+        </section>
+    </div>
+    <!--Section Register-->
+    <form action="" method="get" name="formRegister">
+        <label for="name">Nombre:</label>
+        <input type="text" name="name" id="name">
+        <label for="lastNames">Apellidos:</label>
+        <input type="text" name="lastNames" id="lastNames">
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email">
+        <label for="brithday">Cumpleaños</label>
+        <input type="number" name="brithday" id="brithday">
+        <label for="password">password:</label>
+        <input type="password" name="password" id="password">
+        <label for="confirmPassword">Confirmar contraseña</label>
+        <input type="password" name="confirmPassword" id="confirmPassword">
+        <button type="checkbox" id="acepto"></button>
+        <label for="acepto">He leído los términos y acepto.</label>
+    </form>
+    <!--Section footer-->
+    <footer class="footer">
+        <span>
+      © Copyright Producto exclusivo de Centro Emergencia Mujer. Todos los derechos son reservados.
   </span>
-</footer>
-  <script type="module" src="index.js"></script>
+    </footer>
+    <script type="module" src="index.js"></script>
 </body>
-</html> 
+
+</html>
