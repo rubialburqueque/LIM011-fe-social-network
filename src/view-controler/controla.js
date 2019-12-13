@@ -11,6 +11,6 @@ export const changeView = (hash) => {
     case '#/': { return sectionIndex.appendChild(components.home()); }
     case '#/perfil': { return sectionIndex.appendChild(components[id]()); }
     default:
-      /* break;*/
+      /* break; */
   }
 };

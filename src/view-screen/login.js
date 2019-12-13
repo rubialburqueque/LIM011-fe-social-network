@@ -1,5 +1,5 @@
 export const logIn = () => {
-  const form = `<div class="flex-container">
+    const form = `<div class="flex-container">
       <div id="logo" class="border-box logo text-center">
         <img class="img-logo" src="../assets/laptop-logo1.png">
       </div>
@@ -20,27 +20,27 @@ export const logIn = () => {
         <p class="text-center">¿No tienes una cuenta? <a class="links" href="#/signUp" title="link de registro">Regístrate</a></p>
       </div>
     </div>`;
-
-  let div = document.createElement('div');
-  div.innerHTML = form;
-
-  const logInBtn = div.querySelector('#log-in-btn');
-  logInBtn.addEventListener('click', loginOnClick);
-
-  const facebookLogInBtn = div.querySelector('#log-in-fb');
-  facebookLogInBtn.addEventListener('click', () => {
-    authFacebook()
-      .then((result) => {
-        changeHash('#/home');
+    
+    let div = document.createElement('div');
+    div.innerHTML = form;
+    
+    const logInBtn = div.querySelector('#log-in-btn');
+    logInBtn.addEventListener('click', loginOnClick);
+  
+    const facebookLogInBtn = div.querySelector('#log-in-fb');
+    facebookLogInBtn.addEventListener('click', () => {
+      authFacebook() 
+      .then((result) =>{
+       changeHash('#/home')
       })
-      .catch(() => { })
-  });
-
-  const googleLogInBtn = div.querySelector('#log-in-gmail');
-  googleLogInBtn.addEventListener('click', () => authGmail()
-    .then(() => changeHash('#/home'))
-    .catch(() => { })
-  );
-
-  return div;
-}
+      .catch(() => {})
+    });
+    
+    const googleLogInBtn = div.querySelector('#log-in-gmail');
+    googleLogInBtn.addEventListener('click', () => authGmail()
+      .then(() => changeHash('#/home'))
+      .catch(() => {})
+      );
+   
+    return div;
+  }
