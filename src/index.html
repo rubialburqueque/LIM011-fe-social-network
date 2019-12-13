@@ -5,76 +5,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>GirlAsk</title>
-    <link rel="stylesheet" href="fonts/style.css">
-    <link rel="stylesheet" href="style.css">
+    <title>girlAsk</title>
+    <link rel="stylesheet" href="main.css">
+
 </head>
 
 <body>
-    <div class="total">
-        <section class="medio">
-            <section class="registrar">
-                <h2> <img src="img/logo2.png"> </h2>
-                <main class="pantalla">
-                    <header class="container-header">
-                        <span class="icon-search"></span>
-                        <input list="foro-name" type="text" id="busqueda-tema" class="filtro" placeholder="Busca tema aqui">
-                        <datalist id="foro-name"></datalist>
-                        <nav>
-                            <button class="button-f" id="boton-home">HOME</button>
-                            <button class="button-f" id="boton-foro">FORO</button>
-                            <button class="button-f" id="boton-contactanos">CONTACTANOS</button>
-                        </nav>
-                    </header>
-
-                    <p class="titulo">!Bienvenida!</p>
-                    <form id="log">
-                        <span class="icon-user"></span>
-                        </br>
-                        <input id="username" type="text" name="user" placeholder="Ingresar usuario aquí">
-                        </br>
-                        <span class="icon-key"></span>
-                        </br>
-                        <input id="password" type="password" name="password" placeholder="Ingresar contraseña aquí">
-                    </form>
-                    <p>O bien ingresa con ...</p>
-                    </br>
-                    <span class="icon-google"></span>
-                    <span class="icon-facebook"></span>
-                    <span class="icon-twitter"></span>
-                    </br>
-                    </br>
-                    <input id="login" type="button" value="INGRESA" class="button-w">
-                    <input id="register" type="button" value="REGISTRATE" class="button-f">
-            </section>
-            <img src="img/computadora.png" alt="" class="img-principal" />
-        </section>
-    </div>
-    <!--Section Register-->
-    <form action="" method="get" name="formRegister">
-        <label for="name">Nombre:</label>
-        <input type="text" name="name" id="name" value="naty">
-        <label for="lastNames">Apellidos:</label>
-        <input type="text" name="lastName" id="lastName" value="lino">
-        <label for="email">Email:</label>
-        <input type="email" name="email" id="email" value="naty@4393">
-        <label for="brithday">Cumpleaños</label>
-        <input type="text" name="brithday" id="brithday" value="545">
-        <label for="password">password:</label>
-        <input type="password" name="password" id="password" value="dbchdbsk">
-        <label for="confirmPassword">Confirmar contraseña</label>
-        <input type="password" name="confirmPassword" id="confirmPassword" value="hsdiucbd">
-        <button type="checkbox" id="acepto"></button>
-        <label for="acepto">He leído los términos y acepto.</label>
-        <input type="submit">
-    </form>
-    <!--Section footer-->
+    <header>
+        <div class="header background color padding">
+            <a class="link color" href="#/">
+                <h1> <img src="img/logo2.png"> </h1>
+            </a>
+            <nav>
+                <ul class="menu flex">
+                    <span class="icon-search"></span>
+                    <input list="foro-name" type="text" id="busqueda-tema" class="filtro" placeholder="Busca tema aqui">
+                    <datalist id="foro-name"></datalist>
+                    <li class="container-link">
+                        <a class="link color" href="#/register">Registro</a>
+                    </li>
+                    <li class="container-link">
+                        <a class="link color" href="#/foro">Foro</a>
+                    </li>
+                    <li class="container-link">
+                        <a class="link color" href="#/contacto">Contáctenos</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section id="container" class="flex margin-top"></section>
     <footer class="footer">
-        <span>
-      © Copyright Producto exclusivo de Centro Emergencia Mujer. Todos los derechos son reservados.
-  </span>
+        <div class="background color flex padding">
+            <p class="not-margin"> <i></i> class="icon-angry"</i> Copyright Producto exclusivo de Centro Emergencia Mujer. Todos los derechos reservados.</p>
+        </div>
     </footer>
-    <script type="module" src="register.js"></script>
+
+    <script type="module" src="main.js"></script>
 </body>
 
 </html>
