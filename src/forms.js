@@ -7,8 +7,10 @@ console.log(elementsRegister);
 // eslint-disable-next-line no-console
 console.log(elementsRegister.name.value);
 
-formRegister.addEventListener('submit', (event) => {
+document.getElementById('formRegister').addEventListener('submit', (event) => {
   event.preventDefault();
+  // eslint-disable-next-line no-console
+  console.log('ingresa al button');
   correctRegiste(elementsRegister.name.value,
     elementsRegister.lastName.value,
     elementsRegister.email.value,
