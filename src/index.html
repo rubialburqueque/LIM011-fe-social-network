@@ -8,29 +8,33 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class = "total">
+  <div class = "total"></div>
       <!--aside class = "aside aside-1"></aside-->
     <section class = "medio">
-      <img src = "../imagen/computadora.png" alt="" class = "img-principal"/>
-      <section class = "registrar">
-        <h2> < codebook > </h2>
-        <p>!Bienvenida, Coder!</p>
-        <input type = "text" placeholder = "email"><br/>
-        <input type = "text" placeholder = "contraseña"><br/>
-        <button>log in</button>
-        <p>O bien ingresa con ...</p>
-        <img src = "../imagen/face.jpg" class = "social"/> 
-        <img src = "../imagen/google.jpg" class = "social1"/>
-        <p>No tienes cuenta? <a href="#">Registrate</a> </p>
+      <img src = "../imagen/computadora.png" alt="computadora" class = "img-principal"/>
+      <section class = "registrar">   
+          <h2> < codebook > </h2>
+          <p>!Bienvenida, Coder!</p>
+          <form>
+          <input type = "text" placeholder = "email" id = "email"><br/>
+          <p id = "txtemail"></p>
+          <input type = "text" placeholder = "contraseña"  id = "contraseña"><br/>
+          <p id = "txtcontraseña"></p>
+          <a href = "#/perfil" id = "login">log in</a>
+          <p>O bien ingresa con ...</p>
+          <img src = "imagen/face.jpg" class = "social"  /> <a href = "#/perfil"></a>
+          <img src = "imagen/google.jpg" class = "social1" href = "#/perfil"/>
+          <p>No tienes cuenta? <a href = "#/registrar">Registrate</a> </p>
+        </form>   
       </section>
-      <section>
-        
-      </section>
-      
+      <section id = "perfil">    
+      </section>      
     </section>
-    <aside class = "aside aside-2">.</aside>
+    <aside class = "aside aside-2">.</aside>    
   </div>
-  
-  <script type="module" src="index.js"></script>
+  <footer class = "footer">
+    <p>creado por liliana, rubi y natalia </p>
+  </footer>
+  <script type="module" src="example.js"></script>
 </body>
 </html> 

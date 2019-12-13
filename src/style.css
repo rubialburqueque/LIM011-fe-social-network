@@ -4,8 +4,7 @@
     /*font-weight: bold;*/
     flex-wrap: wrap;
     /*justify-content: space-around;*/
-  }
-  
+}  
 .total > * {
     padding: 10px;
     flex: 1 100%;
@@ -54,9 +53,20 @@ button{
 .social1{
     width: 5%;
 }
-/*input{
+input{
     display: flex;
     flex-direction: column;
     align-content: center;
     
-}*/
+}
+#login{
+    background: gray;
+    padding: 2px 20px;
+    cursor: pointer;
+    border: 2px solid black;
+    border-radius: 10px;  
+    color: white;
+    margin: 15%;
+    
+    text-decoration: none;
+}
