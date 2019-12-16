@@ -74,7 +74,11 @@ body {
     bottom: 0;
     width: 100%
   }
-#comentario{
+
+
+
+
+#comit{
   width: 60%;
   height: 90px;
 }
@@ -85,4 +89,11 @@ body {
 #formRegister{
   display: flex;
   flex-direction: column;
+}
+#comits{
+  background: blanchedalmond;
+}
+#face, #google{
+  width: 10%;
+  border-radius: 10px;
 }
