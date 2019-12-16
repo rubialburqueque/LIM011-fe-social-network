@@ -1,7 +1,9 @@
+import { correctRegister } from '../function.js';
+
 export default () => {
     const viewRegister = `
     <div class="container">
-    <form action="" method="get" name="formRegister">
+    <form id="formRegister">
         <label for="name">Nombre:</label>
         <input type="text" name="name" id="name" value="naty">
         <label for="lastNames">Apellidos:</label>
@@ -21,7 +23,27 @@ export default () => {
 </div>`;
 
     const divElemt = document.createElement('div');
-    divElemt.classList.add('position')
+    divElemt.classList.add('position');
     divElemt.innerHTML = viewRegister;
+    const formRegister = divElemt.querySelector('#formRegister');
+    console.log(formRegister)
+    formRegister.addEventListener('submit', (event) => {
+        event.preventDefault();
+        console.log('ingresa al button');
+        const elementsRegister = formRegister.elements;
+        const regex = /\S+@\S+\.\S+/;
+        if (elementsRegister.password.value.length >= 6 && elementsRegister.password.value === elementsRegister.confirmPassword.value) {
+            if (regex.test(elementsRegister.email.value) === true) {
+                correctRegister(elementsRegister.name.value,
+                    elementsRegister.lastName.value,
+                    elementsRegister.email.value,
+                    elementsRegister.brithday.value,
+                    elementsRegister.password.value,
+                    elementsRegister.confirmPassword.value);
+            }
+        } else {
+            alert('');
+        }
+    });
     return divElemt;
 };

@@ -1,9 +1,10 @@
-import { components } from '../view/index.js.js.js.js';
+import { components } from '../view-screen/index.js';
 
 export const changeTmp = (hash) => {
     const id = hash.split('/')[1];
     const sectionMain = document.getElementById('container');
     sectionMain.innerHTML = '';
+
 
     switch (hash) {
         case '':

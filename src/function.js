@@ -1,19 +1,24 @@
 const register = [];
 
-export const correctRegiste = (name, lastname, birthday, email, password, confirmPassword) => {
-  if (name === '' || lastname === '' || birthday === '' || email === '' || password === '' || confirmPassword === '') {
-    console.log('funciona funcion');
-    alert('Por favor completar campo NOMBRE');
-  } else {
+/* -------------------------------------------------------------------------------------------
+archivo register.js
+--------------------------------------------------------------------------------------------*/
+export const completeRegister = (name, lastname, birthday, email, password, confirmPassword) => {
     register.push({
-      nombre: name,
-      apellido: lastname,
-      cumpleaños: birthday,
-      correo: email,
-      contraseña: password,
-      confirmarContraseña: confirmPassword,
+        nombre: name,
+        apellido: lastname,
+        cumpleaños: birthday,
+        correo: email,
+        contraseña: password,
+        confirmarContraseña: confirmPassword,
     });
     localStorage.setItem('resgistro', JSON.stringify(register));
-  }
-  console.log(register);
+}
+
+export const validateRegister = (string) => {
+    if (string === '') {
+        return false;
+    } else {
+        continue;
+    }
 };
