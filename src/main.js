@@ -1,5 +1,5 @@
 import { changeTmp } from './view-controller/router.js';
-import { correctRegister } from './function.js';
+/* import { correcRegister } from './function.js'; */
 
 const init = () => {
   changeTmp(window.location.hash);

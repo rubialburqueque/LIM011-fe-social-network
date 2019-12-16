@@ -5,18 +5,18 @@ export default () => {
     <div class="container">
     <form id="formRegister">
         <label for="name">Nombre:</label>
-        <input type="text" name="name" id="name" value="naty">
+        <input type="text" name="name" id="name" >
         <label for="lastNames">Apellidos:</label>
-        <input type="text" name="lastName" id="lastName" value="lino">
+        <input type="text" name="lastName" id="lastName">
+        <label for="brithday">Fecha de Nacimiento</label>
+        <input type="text" name="brithday" id="brithday" placeholder="01-01-01">
         <label for="email">Email:</label>
-        <input type="email" name="email" id="email" value="naty@4393">
-        <label for="brithday">Cumpleaños</label>
-        <input type="text" name="brithday" id="brithday" value="545">
+        <input type="email" name="email" id="email">
         <label for="password">password:</label>
-        <input type="password" name="password" id="password" value="dbchdbsk">
+        <input type="password" name="password" id="password">
         <label for="confirmPassword">Confirmar contraseña</label>
-        <input type="password" name="confirmPassword" id="confirmPassword" value="hsdiucbd">
-        <button type="checkbox" id="acepto"></button>
+        <input type="password" name="confirmPassword" id="confirmPassword">
+        <input type="radio" id="acepto">
         <label for="acepto">He leído los términos y acepto.</label>
         <input type="submit">
     </form>
@@ -26,22 +26,24 @@ export default () => {
   divElemt.classList.add('position');
   divElemt.innerHTML = viewRegister;
   const formRegister = divElemt.querySelector('#formRegister');
-  console.log(formRegister)
   formRegister.addEventListener('submit', (event) => {
     event.preventDefault();
+    // eslint-disable-next-line no-console
     console.log('ingresa al button');
     const elementsRegister = formRegister.elements;
     const regex = /\S+@\S+\.\S+/;
-    if (elementsRegister.password.value.length >= 6 && elementsRegister.password.value === elementsRegister.confirmPassword.value) {
+    if (elementsRegister.password.value.length >= 6
+      && elementsRegister.password.value === elementsRegister.confirmPassword.value) {
       if (regex.test(elementsRegister.email.value) === true) {
         correctRegister(elementsRegister.name.value,
           elementsRegister.lastName.value,
-          elementsRegister.email.value,
           elementsRegister.brithday.value,
+          elementsRegister.email.value,
           elementsRegister.password.value,
           elementsRegister.confirmPassword.value);
       }
     } else {
+      // eslint-disable-next-line no-alert
       alert('Las contraseñas no son iguales');
     }
   });
