@@ -5,6 +5,7 @@ export const changeTmp = (hash) => {
   const sectionMain = document.getElementById('container');
   sectionMain.innerHTML = '';
 
+
   switch (hash) {
     case '':
     case '#':

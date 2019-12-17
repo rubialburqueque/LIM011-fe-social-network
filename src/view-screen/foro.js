@@ -25,7 +25,7 @@ export default () => {
   divElemt.querySelector('#nombre').innerHTML = localStorage.getItem('nombreUsuario');
 
   let text = [];
-  
+
   const btnCompartir = divElemt.querySelector('#share');
   btnCompartir.addEventListener('click', () => {
     divElemt.querySelector('#name-user').innerHTML = localStorage.getItem('nombreUsuario');

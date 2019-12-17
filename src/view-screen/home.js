@@ -14,10 +14,8 @@ export default () => {
     </form>
     <p>O bien ingresa con ...</p>
     </br>
-    <img src = "../imagen/face.jpg" id = "face"/>
-    <img src = "../imagen/google.jpg" id = "google"/>
-    <span class="icon-google"></span>
-    <span class="icon-facebook"></span>
+    <span class="icon-gplus"></span>
+    <span class="icon-facebook-circled"></span>
     <span class="icon-twitter"></span>
     </br>
     <input id="login" type="button" value="INGRESA" class="button-w">
@@ -49,5 +47,6 @@ export default () => {
       divElemt.querySelector('#error-message').innerHTML = 'email o contraseña incorrecta';
     }
   });
+
   return divElemt;
 };

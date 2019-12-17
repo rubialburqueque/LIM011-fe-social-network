@@ -4,21 +4,21 @@ export default () => {
   const viewRegister = `
     <div class="container">
     <form id="formRegister">
-        <label for="name">Nombre:</label>
-        <input type="text" name="name" id="name" >
-        <label for="lastNames">Apellidos:</label>
-        <input type="text" name="lastName" id="lastName">
-        <label for="brithday">Fecha de Nacimiento</label>
-        <input type="text" name="brithday" id="brithday" placeholder="01-01-01">
-        <label for="email">Email:</label>
-        <input type="email" name="email" id="email">
-        <label for="password">password:</label>
-        <input type="password" name="password" id="password">
-        <label for="confirmPassword">Confirmar contraseña</label>
-        <input type="password" name="confirmPassword" id="confirmPassword">
-        <input type="radio" id="acepto">
-        <label for="acepto">He leído los términos y acepto.</label>
-        <input type="submit">
+      <label for="name">Nombre:</label>
+      <input type="text" name="name" id="name" >
+      <label for="lastNames">Apellidos:</label>
+      <input type="text" name="lastName" id="lastName">
+      <label for="brithday">Fecha de Nacimiento</label>
+      <input type="text" name="brithday" id="brithday" placeholder="01-01-01">
+      <label for="email">Email:</label>
+      <input type="email" name="email" id="email">
+      <label for="password">password:</label>
+      <input type="password" name="password" id="password">
+      <label for="confirmPassword">Confirmar contraseña</label>
+      <input type="password" name="confirmPassword" id="confirmPassword">
+      <input type="radio" id="acepto">
+      <label for="acepto">He leído los términos y acepto.</label>
+      <input type="submit">
     </form>
 </div>`;
 

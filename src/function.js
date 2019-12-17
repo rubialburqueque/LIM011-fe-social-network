@@ -1,9 +1,10 @@
 let registers = [];
+let i = 0;
 
 export const correctRegister = (name, lastname, birthday, email, password, confirmPassword) => {
   if (name === '' || lastname === '' || birthday === '' || email === '' || password === '' || confirmPassword === '') {
     // eslint-disable-next-line no-alert
-    alert('Por favor completar campo NOMBRE');
+    alert('Por favor completar campo');
   } else {
     // eslint-disable-next-line no-console
     console.log('register');
@@ -14,11 +15,15 @@ export const correctRegister = (name, lastname, birthday, email, password, confi
     registers.push({
       nombre: name,
       apellido: lastname,
+      id: i += 1,
       cumpleaños: birthday,
       correo: email,
       contraseña: password,
       confirmarContraseña: confirmPassword,
     });
+    // eslint-disable-next-line no-console
+    console.log(registers);
+
     localStorage.setItem('registro', JSON.stringify(registers));
   }
   /* console.log(register); */

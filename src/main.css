@@ -1,75 +1,29 @@
-body {
-    background: #fff;
-    color: rgba(0, 0, 0, 0.87);
-    font-family: 'Montserrat', sans-serif;
-    background: url(img/fondo.jpg) no-repeat center top fixed;
+* {
     margin: 0;
     padding: 0;
-  }
-  
-  .text-center {
-    text-align: center
-  }
-  
-  .not-margin {
-    margin: 0
-  }
-  
-  .background {
-    background: url(img/fondo.jpg) no-repeat center top fixed;
-  }
-  
-  .color {
-    color: #fff
-  }
-  
-  .flex {
-    display: flex;
-    justify-content: center;
-    align-items: center
-  }
-  
-  .padding {
-    padding: 1rem
-  }
-  
-  .position {
-    position: relative;
-  }
-  
-  .margin-top {
-    margin-top: 2rem
-  }
-  
-  .image {
-    width: 60%;
-  }
-  
-  /* Style for header */
-  
-  .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .menu {
-    list-style: none
-  }
-  
-  .container-link {
-    padding-right: 1rem
-  }
-  
-  .link {
-    text-decoration: none
-  }
-  
-  /* Style for footer*/
-  
-  .footer {
+}
+
+body {
+    background: #fff;
+    color: rgba(255, 255, 255, 0.87);
+    font-family: 'Montserrat', sans-serif;
+    background: url(./imagen/fondo.jpg) no-repeat center top fixed;
+}
+
+header>h1 {
+    width: 100%;
+    height: 10rem;
+}
+
+.logo {
+    margin: 1rem 0 0 3rem;
+}
+
+header {
     position: fixed;
-    background: url(img/footer.png);
+    width: 100%;
+    height: 7rem;
+    top: 0;
     left: 0;
     bottom: 0;
     width: 100%
@@ -82,13 +36,90 @@ body {
   width: 60%;
   height: 90px;
 }
-.foto{
-  width: 10%;
-  border-radius: 10px;
+
+
+/*------------------------------------------------------------------------
+ Style for Menu
+------------------------------------------------------------------------*/
+
+#bar-menu {
+    display: none;
 }
-#formRegister{
-  display: flex;
-  flex-direction: column;
+
+label {
+  float: right;
+  top: 0;
+  z-index: 250;
+}
+
+nav ul li a {
+  color: #fff;
+  list-style: none;
+}
+
+.container {
+  width: 98%;
+  margin: auto;
+}
+
+.menu {
+  position: absolute;
+  top: 70px;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(94, 11, 94, 0.89);
+  transition: all 0.7s;
+  transform: translateX(-100%);
+}
+
+.menu ul li a {
+    display: block;
+    color: #fff;
+    height: 10px;
+    padding: 20px;
+    text-decoration: none;
+    border-bottom: 2px solid #fff;
+}
+
+.menu ul li a:hover {
+    cursor: pointer;
+    background: rgba(180, 130, 180, 0.89);
+}
+
+#bar-menu:checked~.menu {
+    transform: translateX(0%);
+}
+
+
+/*------------------------------------------------------------------------
+Style for header 
+------------------------------------------------------------------------*/
+
+
+/*------------------------------------------------------------------------
+Style for footer
+------------------------------------------------------------------------*/
+
+.footer {
+  position: absolute;
+  z-index: 10000;
+  background: url(./imagen/footer.png);
+  bottom: 0;
+  width: 100%;
+}
+
+
+/*------------------------------------------------------------------------
+Style for container
+------------------------------------------------------------------------*/
+
+#container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    margin: 100px 0 0 0;
 }
 #commits{
   background: blanchedalmond;
