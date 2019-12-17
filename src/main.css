@@ -78,7 +78,7 @@ body {
 
 
 
-#comit{
+#commit{
   width: 60%;
   height: 90px;
 }
@@ -90,7 +90,7 @@ body {
   display: flex;
   flex-direction: column;
 }
-#comits{
+#commits{
   background: blanchedalmond;
 }
 #face, #google{

@@ -5,13 +5,15 @@ export default () => {
       <img src = "../imagen/foto.jpeg" class = "foto" /><p id = "nombre"></p>
     </div>
     </br>
-    <input id="comit" type="text" placeholder="¿Que quieres compartir?....">
+    <input id="commit" type="text" placeholder="¿Que quieres compartir?....">
     </br>
     <button type="button" id="share">compartir</button>
     <div>
-    <section id = "comits"> 
+    <section id = "commits"> 
       <p id = "name-user"></p>
       <p id = "fecha"></p>
+      <p id = "commitPublicado"></p>
+      
     </section>
     </div>
   </section>`;
@@ -21,13 +23,33 @@ export default () => {
   divElemt.innerHTML = viewForo;
 
   divElemt.querySelector('#nombre').innerHTML = localStorage.getItem('nombreUsuario');
+
   let text = [];
+  
   const btnCompartir = divElemt.querySelector('#share');
   btnCompartir.addEventListener('click', () => {
-    text += divElemt.querySelector('#comit').value;
-    divElemt.querySelector('#comits').innerHTML = text;
     divElemt.querySelector('#name-user').innerHTML = localStorage.getItem('nombreUsuario');
+    text += divElemt.querySelector('#commit').value;
+    divElemt.querySelector('#commits').innerHTML = text;
   });
-
   return divElemt;
 };
+
+/* let text = [];
+text += divElemt.querySelector('#commit').value;
+const createElement = (comentario) => {
+  let commits = '';
+  for (let i = 0; i < comentario.length; i += 1) {
+    commits += `
+      <p id = "name-user"><strong>${comentario[i].name}</strong></p>
+      <p id = "fecha"></p>
+      <p id = "commitPublicado"><strong>${text}</strong></p>
+      `;
+  }
+  divElemt.querySelector('#commits').innerHTML = commits;
+};
+ const btnCompartir = divElemt.querySelector('#share');
+btnCompartir.addEventListener('click', () => {
+  text  = commits;
+  createElement(text);
+} */
