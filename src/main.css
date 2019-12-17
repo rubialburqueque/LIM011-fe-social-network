@@ -74,3 +74,15 @@ body {
     bottom: 0;
     width: 100%
   }
+#comentario{
+  width: 60%;
+  height: 90px;
+}
+.foto{
+  width: 10%;
+  border-radius: 10px;
+}
+#formRegister{
+  display: flex;
+  flex-direction: column;
+}

@@ -1,6 +1,7 @@
-export default () => {
-  const viewHome = `
+//import { default } from './foro.js';
 
+export default () => {
+    const viewHome = `
     <section id="home ><p class="titulo">!Bienvenida!</p>
     <form id="log">
       <span class="icon-user"></span>
@@ -10,6 +11,7 @@ export default () => {
       <span class="icon-key"></span>
       </br>
       <input id="password" type="password" name="password" placeholder="Ingresar contraseña aquí">
+      <p id="error-message" class="text-center error-message"></p>
     </form>
     <p>O bien ingresa con ...</p>
     </br>
@@ -22,8 +24,34 @@ export default () => {
     </section>
     <section><img src = "img/computadora.png" alt="" class = "img-principal"/></section>`;
 
-  const divElemt = document.createElement('div');
-  divElemt.classList.add('position');
-  divElemt.innerHTML = viewHome;
-  return divElemt;
+    const divElemt = document.createElement('div');
+    divElemt.classList.add('position');
+    divElemt.innerHTML = viewHome;
+
+    const registers = JSON.parse(localStorage.getItem('registro'));
+    const btnLogin = divElemt.querySelector('#login');
+    const btnRegister = divElemt.querySelector('#register');
+    // eslint-disable-next-line no-console
+    console.log(registers)
+    btnLogin.addEventListener('click', (event) => {
+        event.preventDefault();
+        const emailUsuario = divElemt.querySelector('#username').value;
+        // eslint-disable-next-line no-console
+        console.log(emailUsuario)
+        const contraseñaUsuario = divElemt.querySelector('#password').value;
+        const usuarios = registers.filter(registro => registro.correo === emailUsuario &&
+            registro.contraseña === contraseñaUsuario);
+        if (usuarios.length >= 1) {
+            localStorage.setItem('nombreUsuario', usuarios[0].nombre);
+            // eslint-disable-next-line no-restricted-globals
+            location.href = '#/foro';
+        } else {
+            divElemt.querySelector('#error-message').innerHTML = 'email o contraseña incorrecta';
+        }
+    });
+
+    btnRegister.addEventListener('click', (event) => {
+        location.href = '#/register';
+    });
+    return divElemt;
 };
