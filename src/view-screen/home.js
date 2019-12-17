@@ -21,7 +21,7 @@ export default () => {
     <input id="login" type="button" value="INGRESA" class="button-w">
     <p>¿No tienes una cuenta? <a href="#/register">Regístrate</a></p>
     </section>
-    <section><img src = "img/computadora.png" alt="" class = "img-principal"/></section>`;
+    <section><img src = "./imagen/computadora.png" alt="" class = "logo-computer"/></section>`;
 
   const divElemt = document.createElement('div');
   divElemt.classList.add('position');
