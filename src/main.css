@@ -25,7 +25,20 @@ header {
     height: 7rem;
     top: 0;
     left: 0;
+<<<<<<< HEAD
     z-index: 200;
+=======
+    bottom: 0;
+    width: 100%
+  }
+
+
+
+
+#comit{
+  width: 60%;
+  height: 90px;
+>>>>>>> a693683a1f4d2b849123dfa96cf89870afa53e84
 }
 
 
@@ -42,6 +55,7 @@ label {
     top: 0;
     z-index: 250;
 }
+<<<<<<< HEAD
 
 nav ul li a {
     color: #fff;
@@ -112,3 +126,12 @@ Style for footer
     height: auto;
     margin: 100px 0 0 0;
 }
+=======
+#comits{
+  background: blanchedalmond;
+}
+#face, #google{
+  width: 10%;
+  border-radius: 10px;
+}
+>>>>>>> a693683a1f4d2b849123dfa96cf89870afa53e84

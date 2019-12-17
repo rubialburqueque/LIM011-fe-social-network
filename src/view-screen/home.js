@@ -1,4 +1,3 @@
-//import { default } from './foro.js';
 
 export default () => {
     const viewHome = `
@@ -20,7 +19,7 @@ export default () => {
     <span class="icon-twitter"></span>
     </br>
     <input id="login" type="button" value="INGRESA" class="button-w">
-    <input id="register" type="button" value="REGISTRATE" class="button-f">
+    <p>¿No tienes una cuenta? <a href="#/register">Regístrate</a></p>
     </section>
     <section><img src = "img/computadora.png" alt="" class = "img-principal"/></section>`;
 
@@ -50,8 +49,5 @@ export default () => {
         }
     });
 
-    btnRegister.addEventListener('click', (event) => {
-        location.href = '#/register';
-    });
     return divElemt;
 };

@@ -27,7 +27,7 @@ export default () => {
     divElemt.innerHTML = viewRegister;
     const formRegister = divElemt.querySelector('#formRegister');
     formRegister.addEventListener('submit', (event) => {
-        event.preventDefault();
+        event.preventDefault(); 
         // eslint-disable-next-line no-console
         console.log('ingresa al button');
         const elementsRegister = formRegister.elements;
