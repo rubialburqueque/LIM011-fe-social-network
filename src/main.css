@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
@@ -19,26 +20,18 @@ header>h1 {
     margin: 1rem 0 0 3rem;
 }
 
+.logo-computer{
+    width: 130px;
+    height: auto;
+}
+
 header {
     position: fixed;
     width: 100%;
     height: 7rem;
     top: 0;
     left: 0;
-<<<<<<< HEAD
     z-index: 200;
-=======
-    bottom: 0;
-    width: 100%
-  }
-
-
-
-
-#comit{
-  width: 60%;
-  height: 90px;
->>>>>>> a693683a1f4d2b849123dfa96cf89870afa53e84
 }
 
 
@@ -55,7 +48,6 @@ label {
     top: 0;
     z-index: 250;
 }
-<<<<<<< HEAD
 
 nav ul li a {
     color: #fff;
@@ -69,7 +61,7 @@ nav ul li a {
 
 .menu {
     position: absolute;
-    top: 70px;
+    top: 100px;
     left: 0;
     width: 100%;
     height: 100vh;
@@ -126,12 +118,3 @@ Style for footer
     height: auto;
     margin: 100px 0 0 0;
 }
-=======
-#comits{
-  background: blanchedalmond;
-}
-#face, #google{
-  width: 10%;
-  border-radius: 10px;
-}
->>>>>>> a693683a1f4d2b849123dfa96cf89870afa53e84
