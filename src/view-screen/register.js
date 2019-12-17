@@ -42,6 +42,8 @@ export default () => {
           elementsRegister.password.value,
           elementsRegister.confirmPassword.value);
       }
+      // eslint-disable-next-line no-restricted-globals
+      location.href = '#/';
     } else {
       // eslint-disable-next-line no-alert
       alert('Las contraseñas no son iguales');
