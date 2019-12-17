@@ -15,8 +15,8 @@ export default () => {
     </form>
     <p>O bien ingresa con ...</p>
     </br>
-    <span class="icon-google"></span>
-    <span class="icon-facebook"></span>
+    <span class="icon-gplus"></span>
+    <span class="icon-facebook-circled"></span>
     <span class="icon-twitter"></span>
     </br>
     <input id="login" type="button" value="INGRESA" class="button-w">
