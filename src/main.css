@@ -1,7 +1,7 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
@@ -37,11 +37,11 @@ header {
 }
 
 /*------------------------------------------------------------------------
- Style for Menu
+Style for Menu
 ------------------------------------------------------------------------*/
 
 #bar-menu {
-    display: none;
+  display: none;
 }
 
 .container #label-bar-menu{
@@ -53,8 +53,8 @@ header {
 }
 
 nav ul li a {
-    color: #fff;
-    list-style: none;
+  color: #fff;
+  list-style: none;
 }
 
 .container {
@@ -63,23 +63,23 @@ nav ul li a {
 }
 
 .menu {
-    position: absolute;
-    top: 100px;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background: rgba(94, 11, 94, 0.89);
-    transition: all 0.7s;
-    transform: translateX(-100%);
+  position: absolute;
+  top: 100px;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(94, 11, 94, 0.89);
+  transition: all 0.7s;
+  transform: translateX(-100%);
 }
 
 .menu ul li a {
-    display: block;
-    color: #fff;
-    height: 10px;
-    padding: 20px;
-    text-decoration: none;
-    border-bottom: 2px solid #fff;
+  display: block;
+  color: #fff;
+  height: 10px;
+  padding: 20px;
+  text-decoration: none;
+  border-bottom: 2px solid #fff;
 }
 
 .menu ul li a:hover {
@@ -88,7 +88,7 @@ nav ul li a {
 }
 
 #bar-menu:checked~.menu {
-    transform: translateX(0%);
+  transform: translateX(0%);
 }
 
 /*------------------------------------------------------------------------
