@@ -1,19 +1,19 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    background: #fff;
-    color: rgba(255, 255, 255, 0.87);
-    font-family: 'Montserrat', sans-serif;
-    background: url(./imagen/fondo.jpg) no-repeat center top fixed;
+  background: #fff;
+  color: rgba(255, 255, 255, 0.87);
+  font-family: 'Montserrat', sans-serif;
+  background: url(./imagen/fondo.jpg) no-repeat center top fixed;
 }
 
 header>h1 {
-    width: 100%;
-    height: 10rem;
+  width: 100%;
+  height: 10rem;
 }
 
 .logo {
@@ -21,62 +21,62 @@ header>h1 {
 }
 
 .logo-computer{
-    width: 130px;
-    height: auto;
+  width: 130px;
+  height: auto;
 }
 
 header {
-    position: fixed;
-    width: 100%;
-    height: 7rem;
-    top: 0;
-    left: 0;
-    z-index: 200;
+  position: fixed;
+  width: 100%;
+  height: 7rem;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%
 }
 
-
 /*------------------------------------------------------------------------
- Style for Menu
+Style for Menu
 ------------------------------------------------------------------------*/
 
 #bar-menu {
-    display: none;
+  display: none;
 }
 
 label {
-    float: right;
-    top: 0;
-    z-index: 250;
+  float: right;
+  top: 0;
+  z-index: 250;
 }
 
 nav ul li a {
-    color: #fff;
-    list-style: none;
+  color: #fff;
+  list-style: none;
 }
 
 .container {
-    width: 98%;
-    margin: auto;
+  width: 98%;
+  margin: auto;
 }
 
 .menu {
-    position: absolute;
-    top: 100px;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background: rgba(94, 11, 94, 0.89);
-    transition: all 0.7s;
-    transform: translateX(-100%);
+  position: absolute;
+  top: 100px;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(94, 11, 94, 0.89);
+  transition: all 0.7s;
+  transform: translateX(-100%);
 }
 
 .menu ul li a {
-    display: block;
-    color: #fff;
-    height: 10px;
-    padding: 20px;
-    text-decoration: none;
-    border-bottom: 2px solid #fff;
+  display: block;
+  color: #fff;
+  height: 10px;
+  padding: 20px;
+  text-decoration: none;
+  border-bottom: 2px solid #fff;
 }
 
 .menu ul li a:hover {
@@ -85,12 +85,12 @@ nav ul li a {
 }
 
 #bar-menu:checked~.menu {
-    transform: translateX(0%);
+  transform: translateX(0%);
 }
 
 
 /*------------------------------------------------------------------------
- Style for header 
+Style for header 
 ------------------------------------------------------------------------*/
 
 
@@ -99,22 +99,62 @@ Style for footer
 ------------------------------------------------------------------------*/
 
 .footer {
-    position: absolute;
-    z-index: 10000;
-    background: url(./imagen/footer.png);
-    bottom: 0;
-    width: 100%;
+  position: absolute;
+  z-index: 10000;
+  background: url(./imagen/footer.png);
+  bottom: 0;
+  width: 100%;
 }
 
 
 /*------------------------------------------------------------------------
- Style for container
+Style for container
 ------------------------------------------------------------------------*/
 
 #container {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    height: auto;
-    margin: 100px 0 0 0;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  margin: 100px 0 0 0;
+}
+.foto{
+  width: 20%;
+  border-radius: 10px;
+}
+#commits{
+  background: blanchedalmond;
+  color: black;
+}
+#face, #google{
+  width: 10%;
+  border-radius: 10px;
+}
+#commit{
+  width: 60%;
+  height: 90px;
+}
+
+
+@media (min-width:600px){
+  .menu{
+      position: static;
+      width: auto;
+      height: auto;
+      transform: translateX(0%);
+      float: right;
+      display: flex;
+      background-color: rgba(255, 255, 255, 0);
+  }
+  nav ul{
+  display: flex;
+  flex-direction: row;
+  color: #fff;
+  list-style: none;
+  text-decoration: none;
+  background-color: 0;
+}
+  label{
+      display: none;
+  } 
 }

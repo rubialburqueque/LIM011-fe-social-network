@@ -1,6 +1,6 @@
 
 export default () => {
-    const viewHome = `
+  const viewHome = `
     <section id="home ><p class="titulo">!Bienvenida!</p>
     <form id="log">
       <span class="icon-user"></span>
@@ -23,31 +23,30 @@ export default () => {
     </section>
     <section><img src = "./imagen/computadora.png" alt="" class = "logo-computer"/></section>`;
 
-    const divElemt = document.createElement('div');
-    divElemt.classList.add('position');
-    divElemt.innerHTML = viewHome;
+  const divElemt = document.createElement('div');
+  divElemt.classList.add('position');
+  divElemt.innerHTML = viewHome;
 
-    const registers = JSON.parse(localStorage.getItem('registro'));
-    const btnLogin = divElemt.querySelector('#login');
-    const btnRegister = divElemt.querySelector('#register');
+  const registers = JSON.parse(localStorage.getItem('registro'));
+  const btnLogin = divElemt.querySelector('#login');
+  // eslint-disable-next-line no-console
+  console.log(registers);
+  btnLogin.addEventListener('click', (event) => {
+    event.preventDefault();
+    const emailUsuario = divElemt.querySelector('#username').value;
     // eslint-disable-next-line no-console
-    console.log(registers)
-    btnLogin.addEventListener('click', (event) => {
-        event.preventDefault();
-        const emailUsuario = divElemt.querySelector('#username').value;
-        // eslint-disable-next-line no-console
-        console.log(emailUsuario)
-        const contraseñaUsuario = divElemt.querySelector('#password').value;
-        const usuarios = registers.filter(registro => registro.correo === emailUsuario &&
-            registro.contraseña === contraseñaUsuario);
-        if (usuarios.length >= 1) {
-            localStorage.setItem('nombreUsuario', usuarios[0].nombre);
-            // eslint-disable-next-line no-restricted-globals
-            location.href = '#/foro';
-        } else {
-            divElemt.querySelector('#error-message').innerHTML = 'email o contraseña incorrecta';
-        }
-    });
+    console.log(emailUsuario);
+    const contraseñaUsuario = divElemt.querySelector('#password').value;
+    const usuarios = registers.filter(registro => registro.correo === emailUsuario
+      && registro.contraseña === contraseñaUsuario);
+    if (usuarios.length >= 1) {
+      localStorage.setItem('nombreUsuario', usuarios[0].nombre);
+      // eslint-disable-next-line no-restricted-globals
+      location.href = '#/foro';
+    } else {
+      divElemt.querySelector('#error-message').innerHTML = 'email o contraseña incorrecta';
+    }
+  });
 
-    return divElemt;
+  return divElemt;
 };
