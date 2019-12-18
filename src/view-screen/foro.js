@@ -1,3 +1,5 @@
+
+
 export default () => {
   const viewForo = `
   <section id="foro" ><p class="titulo">girl ASK</p>
@@ -10,10 +12,6 @@ export default () => {
     <button type="button" id="share">compartir</button>
     <div>
     <section id = "commits"> 
-      <p id = "name-user"></p>
-      <p id = "fecha"></p>
-      <p id = "commitPublicado"></p>
-      
     </section>
     </div>
   </section>`;
@@ -22,34 +20,44 @@ export default () => {
   divElemt.classList.add('position');
   divElemt.innerHTML = viewForo;
 
-  divElemt.querySelector('#nombre').innerHTML = localStorage.getItem('nombreUsuario');
-
-  let text = [];
-
+  // divElemt.querySelector('#nombre').innerHTML = localStorage.getItem('nombreUsuario');
   const btnCompartir = divElemt.querySelector('#share');
   btnCompartir.addEventListener('click', () => {
-    divElemt.querySelector('#name-user').innerHTML = localStorage.getItem('nombreUsuario');
+    const objpost = {
+      nombre: localStorage.getItem('nombreUsuario'),
+      texto: divElemt.querySelector('#commit').value,
+    };
+ // localStorage.setItem('posts', ([objpost]));
+    localStorage.setItem('posts', JSON.stringify([objpost]));
+    /* divElemt.querySelector('#name-user').innerHTML = localStorage.getItem('nombreUsuario');
+    // divElemt.querySelector('#fecha').innerHTML = fecha;
     text += divElemt.querySelector('#commit').value;
-    divElemt.querySelector('#commits').innerHTML = text;
+    divElemt.querySelector('#commit-publicado').innerHTML = text;
+
+    console.log(viewContact); */
   });
   return divElemt;
 };
-
+/* const createElement = (comentario) => {
+    let commits = '';
+    for (let i = 0; i < comentario.length; i++ ) {
+      commits += `
+      <section>
+        <p id = "name-user"></p>
+        <p id = "fecha"></p>
+        <p id = "commitPublicado"></p>
+        </section>
+        `;
+    }
+    divElemt.querySelector('#commits').innerHTML = commits;
+  };
+  let text = [];
+  const btnCompartir = divElemt.querySelector('#share');
+  btnCompartir.addEventListener('click', () => {
+    divElemt.querySelector('#name-user').innerHTML = localStorage.getItem('nombreUsuario');
+    // divElemt.querySelector('#fecha').innerHTML = fecha;
+    text += divElemt.querySelector('#commit').value;
+    divElemt.querySelector('#commit-publicado').innerHTML = text;
+  }); */
 /* let text = [];
-text += divElemt.querySelector('#commit').value;
-const createElement = (comentario) => {
-  let commits = '';
-  for (let i = 0; i < comentario.length; i += 1) {
-    commits += `
-      <p id = "name-user"><strong>${comentario[i].name}</strong></p>
-      <p id = "fecha"></p>
-      <p id = "commitPublicado"><strong>${text}</strong></p>
-      `;
-  }
-  divElemt.querySelector('#commits').innerHTML = commits;
-};
- const btnCompartir = divElemt.querySelector('#share');
-btnCompartir.addEventListener('click', () => {
-  text  = commits;
-  createElement(text);
-} */
+text += divElemt.querySelector('#commit').value; */

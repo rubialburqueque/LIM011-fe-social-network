@@ -118,8 +118,13 @@ Style for container
   height: auto;
   margin: 100px 0 0 0;
 }
+.foto{
+  width: 20%;
+  border-radius: 10px;
+}
 #commits{
   background: blanchedalmond;
+  color: black;
 }
 #face, #google{
   width: 10%;
@@ -128,4 +133,28 @@ Style for container
 #commit{
   width: 60%;
   height: 90px;
+}
+
+
+@media (min-width:600px){
+  .menu{
+      position: static;
+      width: auto;
+      height: auto;
+      transform: translateX(0%);
+      float: right;
+      display: flex;
+      background-color: rgba(255, 255, 255, 0);
+  }
+  nav ul{
+  display: flex;
+  flex-direction: row;
+  color: #fff;
+  list-style: none;
+  text-decoration: none;
+  background-color: 0;
+}
+  label{
+      display: none;
+  } 
 }
