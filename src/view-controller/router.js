@@ -13,7 +13,7 @@ export const changeTmp = (hash) => {
             { return sectionMain.appendChild(components.home()); }
         case '#/register':
         case '#/foro':
-        case '#/contactenos':
+        case '#/contact':
             { return sectionMain.appendChild(components[id]()); }
         default:
             { return sectionMain.appendChild(components.different()); }
