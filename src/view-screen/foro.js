@@ -3,7 +3,7 @@
 export default () => {
   const viewForo = `
   <section id="foro" ><p class="titulo">girl ASK</p>
-    <div id = "perfil">
+    <div id = "addComent">
       <img src = "../imagen/foto.jpeg" class = "foto" /><p id = "nombre"></p>
     </div>
     </br>
@@ -17,6 +17,7 @@ export default () => {
   </section>`;
 
   const divElemt = document.createElement('div');
+
   divElemt.classList.add('position');
   divElemt.innerHTML = viewForo;
 
@@ -27,7 +28,7 @@ export default () => {
       nombre: localStorage.getItem('nombreUsuario'),
       texto: divElemt.querySelector('#commit').value,
     };
- // localStorage.setItem('posts', ([objpost]));
+    // localStorage.setItem('posts', ([objpost]));
     localStorage.setItem('posts', JSON.stringify([objpost]));
     /* divElemt.querySelector('#name-user').innerHTML = localStorage.getItem('nombreUsuario');
     // divElemt.querySelector('#fecha').innerHTML = fecha;

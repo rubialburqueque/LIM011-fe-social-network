@@ -5,34 +5,35 @@
 }
 
 body {
-  background: #fff;
-  color: rgba(255, 255, 255, 0.87);
-  font-family: 'Montserrat', sans-serif;
-  background: url(./imagen/fondo.jpg) no-repeat center top fixed;
+    background: #fff;
+    color: rgba(255, 255, 255, 0.87);
+    font-family: 'Montserrat', sans-serif;
+    background: url(./imagen/fondo.jpg) no-repeat center top fixed;
+    overflow-y: hidden;
 }
 
-header>h1 {
-  width: 100%;
-  height: 10rem;
+h1 {
+    width: 50%;
 }
 
 .logo {
-    margin: 1rem 0 0 3rem;
+    position: absolute  ;
+    margin: 1rem 0 0 3.8rem;
 }
 
 .logo-computer{
-  width: 130px;
-  height: auto;
+    display: none;
+    position: relative;
+    width: 9rem;
+    height: 12rem;
 }
 
 header {
-  position: fixed;
-  width: 100%;
-  height: 7rem;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  width: 100%
+    position: fixed;
+    width: 100%;
+    height: 7rem;
+    top: 0;
+    left: 0;
 }
 
 /*------------------------------------------------------------------------
@@ -43,10 +44,12 @@ Style for Menu
   display: none;
 }
 
-label {
-  float: right;
-  top: 0;
-  z-index: 250;
+.container #label-bar-menu{
+    position: relative;
+    display: flex;
+    float: right;
+    background-position-x: 30px;
+    margin: 25px 10px 0 0;
 }
 
 nav ul li a {
@@ -55,8 +58,8 @@ nav ul li a {
 }
 
 .container {
-  width: 98%;
-  margin: auto;
+    width: 100%;
+    margin: auto;
 }
 
 .menu {
@@ -88,73 +91,123 @@ nav ul li a {
   transform: translateX(0%);
 }
 
+/*------------------------------------------------------------------------
+ Style for views
+------------------------------------------------------------------------*/
+nav ul li a::selection ~.menu{
+    transition: all 0.7s;
+    transform: translateX(-100%); 
+} 
 
 /*------------------------------------------------------------------------
-Style for header 
+ Style for home
+------------------------------------------------------------------------*/
+#home{
+    width: 100%;
+    height: auto;
+    justify-content: center;
+}
+.titulo{
+    margin: 0 5px 6px 50px;
+    font-size: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.inputsHome{
+    width: 150px;
+    margin: 5px;
+}
+.marginHome{
+    margin: 5px;
+}
+.key{
+    margin-right: 0.65rem;
+}
+.icons{
+    margin: 0 5px 6px 60px;
+}
+.button{
+    width: 100px;
+    height: 30px;
+    margin: 10px 10px 10px 60px;
+    border-radius: 20px;
+    background-color: rgba(94, 11, 94, 0.89);
+    color: seashell;
+}
+
+/*------------------------------------------------------------------------
+ Style for Register
 ------------------------------------------------------------------------*/
 
+.inputs-register{
+    margin: 10px 30px 10px 30px;
+    border-radius: 5px;
+    width: 160px;
+    height: 20px;
+}
+.container-register{
+    margin-left: 1rem;
+}
+.label{
+    font-weight: 500;
+    box-shadow: 2px 2px 2px 1px rgba(202, 143, 143, 0.6);
+}
+/*----------------  --------------------------------------------------------
+ Style for foro
+------------------------------------------------------------------------*/
+.foto{
+    width: 30px;
+    height: auto;
+}
 
 /*------------------------------------------------------------------------
 Style for footer
 ------------------------------------------------------------------------*/
 
 .footer {
-  position: absolute;
-  z-index: 10000;
-  background: url(./imagen/footer.png);
-  bottom: 0;
-  width: 100%;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    margin-top: 7rem;
+    background: url(./imagen/footer.png);
+    font-size: 10px;
+    width: 100%;
 }
 
-
 /*------------------------------------------------------------------------
-Style for container
+ Style for container-main
 ------------------------------------------------------------------------*/
 
 #container {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  height: auto;
-  margin: 100px 0 0 0;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    margin: 100px 0 0 0;
 }
-.foto{
-  width: 20%;
-  border-radius: 10px;
-}
-#commits{
-  background: blanchedalmond;
-  color: black;
-}
-#face, #google{
-  width: 10%;
-  border-radius: 10px;
-}
-#commit{
-  width: 60%;
-  height: 90px;
-}
-
 
 @media (min-width:600px){
-  .menu{
-      position: static;
-      width: auto;
-      height: auto;
-      transform: translateX(0%);
-      float: right;
-      display: flex;
-      background-color: rgba(255, 255, 255, 0);
-  }
-  nav ul{
-  display: flex;
-  flex-direction: row;
-  color: #fff;
-  list-style: none;
-  text-decoration: none;
-  background-color: 0;
+   .menu{
+       position: static;
+       width: auto;
+       height: auto;
+       transform: translateX(0%);
+       float: right;
+       display: flex;
+       background-color: rgba(255, 255, 255, 0);
+   }
+   nav ul{
+    display: flex;
+    flex-direction: row;
+    color: #fff;
+    list-style: none;
+    text-decoration: none;
+    background-color: 0;
 }
-  label{
-      display: none;
-  } 
+   .container #label-bar-menu{
+       display: none;
+   } 
+   nav ul li a{
+    margin: 0;
+    padding: 0;
+   }
 }

@@ -1,6 +1,6 @@
 
 export default () => {
-  const viewContact = `
+/*   const viewContact = `
   <section id = "poss">
     <p id = "name-user"></p>
     <p id = "fecha"></p>
@@ -12,9 +12,8 @@ export default () => {
   divElemt.classList.add('position');
   //divElemt.querySelector('commits').innerHTML = viewContact;
 
-  /* divElemt.querySelector('#commits').innerHTML = commits; */
+   divElemt.querySelector('#commits').innerHTML = commits;
 
 
-
-  return divElemt;
+  return divElemt; */
 };
