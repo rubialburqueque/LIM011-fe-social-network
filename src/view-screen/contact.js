@@ -1,19 +1,16 @@
 
-export default () => {
-/*   const viewContact = `
-  <section id = "poss">
-    <p id = "name-user"></p>
-    <p id = "fecha"></p>
-    <p id = "commitPublicado"></p>
-    </section>
-    `;
-
-  const divElemt = document.createElement('div');
-  divElemt.classList.add('position');
-  //divElemt.querySelector('commits').innerHTML = viewContact;
-
-   divElemt.querySelector('#commits').innerHTML = commits;
-
-
-  return divElemt; */
+export const showComentarios = (data) => {
+  let viewContact = '';
+  data.forEach((prueba) => {
+    viewContact += `
+    <section>
+    <p>${prueba.nombre}</p>
+    <p>${prueba.texto}</p>
+    </section>`;
+    viewContact = document.createElement('div');
+    /* divElemt.querySelector('#commit-publicado').innerHTML = data[6].texto;
+    divElemt.querySelector('#name-user').innerHTML = data[].nombre;
+    console.log(data[0].texto); */
+    return viewContact;
+  });
 };
