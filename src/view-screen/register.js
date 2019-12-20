@@ -2,23 +2,23 @@ import { correctRegister } from '../function.js';
 
 export default () => {
   const viewRegister = `
-    <div class="container">
+    <div class="container-register">
     <form id="formRegister">
-      <label for="name">Nombre:</label>
-      <input type="text" name="name" id="name" >
-      <label for="lastNames">Apellidos:</label>
-      <input type="text" name="lastName" id="lastName">
-      <label for="brithday">Fecha de Nacimiento</label>
-      <input type="text" name="brithday" id="brithday" placeholder="01-01-01">
-      <label for="email">Email:</label>
-      <input type="email" name="email" id="email">
-      <label for="password">password:</label>
-      <input type="password" name="password" id="password">
-      <label for="confirmPassword">Confirmar contraseña</label>
-      <input type="password" name="confirmPassword" id="confirmPassword">
-      <input type="radio" id="acepto">
-      <label for="acepto">He leído los términos y acepto.</label>
-      <input type="submit">
+        <label for="name" class="label">Nombre:</label></br>
+        <input type="text" name="name" id="name" class="inputs-register"></br>
+        <label for="lastNames" class="label">Apellidos:</label></br>
+        <input type="text" name="lastName" id="lastName" class="inputs-register"></br>
+        <label for="brithday" class="label">Cumpleaños</label></br>
+        <input type="text" name="brithday" id="brithday" placeholder="01-01-01" class="inputs-register"></br>
+        <label for="email" class="label">Email:</label></br>
+        <input type="email" name="email" id="email" class="inputs-register"></br>
+        <label for="password" class="label">password:</label></br>
+        <input type="password" name="password" id="password" class="inputs-register"></br>
+        <label for="confirmPassword" class="label">Confirm password:</label></br>
+        <input type="password" name="confirmPassword" id="confirmPassword" class="inputs-register"></br>
+        <input type="radio" id="acepto">
+        <label for="acepto" class="label">He leído los términos y acepto.</label></br>
+        <input type="submit" class="button">
     </form>
 </div>`;
 
@@ -33,7 +33,7 @@ export default () => {
     const elementsRegister = formRegister.elements;
     const regex = /\S+@\S+\.\S+/;
     if (elementsRegister.password.value.length >= 6
-      && elementsRegister.password.value === elementsRegister.confirmPassword.value) {
+        && elementsRegister.password.value === elementsRegister.confirmPassword.value) {
       if (regex.test(elementsRegister.email.value) === true) {
         correctRegister(elementsRegister.name.value,
           elementsRegister.lastName.value,
@@ -45,7 +45,7 @@ export default () => {
       // eslint-disable-next-line no-restricted-globals
       location.href = '#/';
     } else {
-      // eslint-disable-next-line no-alert
+    // eslint-disable-next-line no-alert
       alert('Las contraseñas no son iguales');
     }
   });
