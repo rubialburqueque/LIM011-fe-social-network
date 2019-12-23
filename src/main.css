@@ -211,3 +211,57 @@ nav ul li a{
   padding: 0;
   }
 }
+/* no tocar esto*/
+#commits{
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.publicaciones {
+  margin: 5px;
+}
+.comment-avatar {
+  margin: 5px;
+  width: 65px;
+  height: 65px;
+  float: left;
+  border: 3px solid #FFF;
+}
+.comment-box {
+  width: 680px;
+  float: right;
+} 
+.comment-content {
+  background: #FFF;
+  padding: 12px;
+  font-size: 15px;
+  color: #595959;
+}
+span{
+color:black;
+}
+.comment-box .comment-head {
+    background: #FCFCFC;
+    padding: 5px 12px;
+    border-bottom: 1px solid #E5E5E5;
+    overflow: hidden;
+    border-radius: 4px 4px 0 0;
+}
+.comment-head{
+  display: flex;
+}
+
+.comment-name.by-author{
+  content: 'autor';
+  /*background: #03658c;*/
+  color: #03658c;
+  font-size: 12px;
+  padding: 3px 5px;
+  font-weight: 700;
+  margin-left: 10px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+
+

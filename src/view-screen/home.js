@@ -28,7 +28,6 @@ export default () => {
   const divElemt = document.createElement('div');
   divElemt.classList.add('position');
   divElemt.innerHTML = viewHome;
-
   const registers = JSON.parse(localStorage.getItem('registro'));
   const btnLogin = divElemt.querySelector('#login');
   // eslint-disable-next-line no-console
@@ -50,3 +49,5 @@ export default () => {
 
   return divElemt;
 };
+
+
