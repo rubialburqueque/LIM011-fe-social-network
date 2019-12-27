@@ -1,16 +1,28 @@
 
 export const showComentarios = (data) => {
   let viewContact = '';
-  data.forEach((prueba) => {
+  data.forEach((comentario) => {
     viewContact += `
-    <section>
-    <p>${prueba.nombre}</p>
-    <p>${prueba.texto}</p>
-    </section>`;
-    viewContact = document.createElement('div');
-    /* divElemt.querySelector('#commit-publicado').innerHTML = data[6].texto;
-    divElemt.querySelector('#name-user').innerHTML = data[].nombre;
-    console.log(data[0].texto); */
-    return viewContact;
+    <div class="publicaciones">
+      <!-- Avatar -->
+      <figure class="comment-avatar"> <img src="aqui va una foto de avatar.jpg" alt=""/> </figure>
+      <!-- Contenedor del Comentario -->
+      <div class="comment-box">
+      <section class="comment-head">
+        <h6 class="comment-name by-author">${comentario.nombre}</h6>
+        <span>hace 20 minutos</span>
+        <i class="fa fa-reply"></i>
+        <i class="fa fa-heart"></i>
+      </section>
+      <section class="comment-content">${comentario.texto}</section>
+    </div>
+  </div> `;
   });
+  return viewContact;
 };
+
+
+/* <section id = "puclicaciones" >
+    <p>${comentario.nombre}</p>
+    <p>${comentario.texto}</p>
+    </section> */
