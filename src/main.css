@@ -5,11 +5,11 @@
 }
 
 body {
-    background: #fff;
-    color: rgba(255, 255, 255, 0.87);
-    font-family: 'Montserrat', sans-serif;
-    background: url(./imagen/fondo.jpg) no-repeat center top fixed;
-    overflow-y: hidden;
+  background: #fff;
+  color: rgba(255, 255, 255, 0.87);
+  font-family: 'Montserrat', sans-serif;
+  background: url(./imagen/fondo.jpg) no-repeat center top fixed;
+  overflow-y: hidden;
 }
 
 h1 {
@@ -135,7 +135,7 @@ nav ul li a::selection ~.menu{
 }
 
 /*------------------------------------------------------------------------
- Style for Register
+Style for Register
 ------------------------------------------------------------------------*/
 
 .inputs-register{
@@ -186,28 +186,82 @@ Style for footer
 }
 
 @media (min-width:600px){
-   .menu{
-       position: static;
-       width: auto;
-       height: auto;
-       transform: translateX(0%);
-       float: right;
-       display: flex;
-       background-color: rgba(255, 255, 255, 0);
-   }
-   nav ul{
+.menu{
+  position: static;
+  width: auto;
+  height: auto;
+  transform: translateX(0%);
+  float: right;
+  display: flex;
+  background-color: rgba(255, 255, 255, 0);
+}
+nav ul{
+  display: flex;
+  flex-direction: row;
+  color: #fff;
+  list-style: none;
+  text-decoration: none;
+  background-color: 0;
+}
+.container #label-bar-menu{
+  display: none;
+} 
+nav ul li a{
+  margin: 0;
+  padding: 0;
+  }
+}
+/* no tocar esto*/
+#commits{
     display: flex;
-    flex-direction: row;
-    color: #fff;
-    list-style: none;
-    text-decoration: none;
-    background-color: 0;
+    flex-direction: column-reverse;
 }
-   .container #label-bar-menu{
-       display: none;
-   } 
-   nav ul li a{
-    margin: 0;
-    padding: 0;
-   }
+
+.publicaciones {
+  margin: 5px;
 }
+.comment-avatar {
+  margin: 5px;
+  width: 65px;
+  height: 65px;
+  float: left;
+  border: 3px solid #FFF;
+}
+.comment-box {
+  width: 680px;
+  float: right;
+} 
+.comment-content {
+  background: #FFF;
+  padding: 12px;
+  font-size: 15px;
+  color: #595959;
+}
+span{
+color:black;
+}
+.comment-box .comment-head {
+    background: #FCFCFC;
+    padding: 5px 12px;
+    border-bottom: 1px solid #E5E5E5;
+    overflow: hidden;
+    border-radius: 4px 4px 0 0;
+}
+.comment-head{
+  display: flex;
+}
+
+.comment-name.by-author{
+  content: 'autor';
+  /*background: #03658c;*/
+  color: #03658c;
+  font-size: 12px;
+  padding: 3px 5px;
+  font-weight: 700;
+  margin-left: 10px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+
+

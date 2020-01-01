@@ -28,16 +28,13 @@ export default () => {
   const divElemt = document.createElement('div');
   divElemt.classList.add('position');
   divElemt.innerHTML = viewHome;
-
   const registers = JSON.parse(localStorage.getItem('registro'));
   const btnLogin = divElemt.querySelector('#login');
   // eslint-disable-next-line no-console
   console.log(registers);
   btnLogin.addEventListener('click', (event) => {
     event.preventDefault();
-    const emailUsuario = divElemt.querySelector('#username').value;
-    // eslint-disable-next-line no-console
-    console.log(emailUsuario);
+    const emailUsuario = divElemt.querySelector('#userName').value;
     const contraseñaUsuario = divElemt.querySelector('#password').value;
     const usuarios = registers.filter(registro => registro.correo === emailUsuario
             && registro.contraseña === contraseñaUsuario);
@@ -52,3 +49,5 @@ export default () => {
 
   return divElemt;
 };
+
+

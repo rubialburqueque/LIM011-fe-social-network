@@ -14,8 +14,6 @@ export const changeTmp = (hash) => {
     case '#/register':
     case '#/foro':
     { return sectionMain.appendChild(components[id]()); }
-    case '#/foro/#contact':
-    { return sectionMain.appendChild(components.contact()); }
     default:
     { return sectionMain.appendChild(components.different()); }
   }
