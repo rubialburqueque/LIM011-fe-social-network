@@ -28,3 +28,25 @@ export const correctRegister = (name, lastname, birthday, email, password, confi
   }
   /* console.log(register); */
 };
+
+
+/* promesas para obtener o guardar datos en localStorage */
+
+const guardarDatos = registro => {
+  return new Promise ((resolve, reject) => {
+    if (registro.find(registro === localStorage.setItem('posts', JSON.stringify(dataPosts1)))) {
+      resolve(registro);
+    } else {
+      reject();
+    }
+  });
+};
+
+
+const obtenerDatos = obtener => {
+  return new Promise ((resolve, reject) => {
+    if(registro.find(obtener === JSON.parse(localStorage.getItem('posts')))) {
+      resolve (registro)
+    }
+  })
+}
