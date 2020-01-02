@@ -29,7 +29,7 @@ export const showComentarios = (data) => {
 };
 
 
-/* <section id = "puclicaciones" >
+/* <section id = "publicaciones" >
     <p>${comentario.nombre}</p>
     <p>${comentario.texto}</p>
     </section> */
