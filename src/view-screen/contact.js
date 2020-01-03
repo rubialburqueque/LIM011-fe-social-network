@@ -18,7 +18,7 @@ export const showComentarios = (data) => {
       </section>
       <section class="comment-content">${comentario.texto}</section>
       <section class="comment-opinion">
-        <p>Me gusta</p> <br>
+        <p>Me gusta</p>
         <p>Comentar</p>
         <i class="fa fa-reply"></i>
         <i class="fa fa-heart"></i>
