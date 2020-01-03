@@ -40,6 +40,7 @@ export default () => {
             && registro.contraseña === contraseñaUsuario);
     if (usuarios.length >= 1) {
       localStorage.setItem('nombreUsuario', usuarios[0].nombre);
+      localStorage.setItem('idUsuario', usuarios[0].id);
       // eslint-disable-next-line no-restricted-globals
       location.href = '#/foro';
     } else {

@@ -23,10 +23,11 @@ export default () => {
   divElemt.innerHTML = viewModifyProfile;
 
   if (localStorage.getItem('registro') != null) {
-    const idUsuario = JSON.parse(localStorage.getItem('registro'));
+    const idUsuario = localStorage.getItem('idUsuario');
     console.log(idUsuario);
 
-    localStorage.setItem('idUsuario', registro[0].id);
+
+    //localStorage.setItem('idUsuario', registro[0].id);
       
       // const aName = JSON.parse(localStorage.getItem(registro.nombre))
       //       aLastName = JSON.parse(localStorage.getItem(registro.apellido)),

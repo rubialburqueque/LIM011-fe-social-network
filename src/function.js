@@ -32,21 +32,36 @@ export const correctRegister = (name, lastname, birthday, email, password, confi
 
 // /* promesas para obtener o guardar datos en localStorage */
 
-// const guardarDatos = registro => {
-//   return new Promise ((resolve, reject) => {
-//     if (registro.find(registro === localStorage.setItem('posts', JSON.stringify(dataPosts1)))) {
-//       resolve(registro);
-//     } else {
-//       reject();
-//     }
-//   });
-// };
+export const guardarPost = (post) => {
+  return new Promise (
+    (resolve, reject) => {
+      if (localStorage.getItem('posts') === null) {
+        const objPost1 = {
+          nombre: localStorage.getItem('nombreUsuario'),
+          texto: post,
+          fecha: new Date(),
+        };
+        localStorage.setItem('posts', JSON.stringify([objPost1]));
+      } else {
+        const dataPosts1 = JSON.parse(localStorage.getItem('posts'));
+        const objPost = {
+          nombre: localStorage.getItem('nombreUsuario'),
+          texto: post,
+          fecha: new Date(),
+        };
+        dataPosts1.push(objPost);
+        localStorage.setItem('posts', JSON.stringify(dataPosts1));
+      }
+      resolve(JSON.parse(localStorage.getItem('posts')));
+    }
+  );
+};
 
 
-// const obtenerDatos = obtener => {
-//   return new Promise ((resolve, reject) => {
-//     if(registro.find(obtener === JSON.parse(localStorage.getItem('posts')))) {
-//       resolve (registro)
-//     }
-//   })
-// }
+/* const obtenerDatos = obtener => {
+  return new Promise ((resolve, reject) => {
+    if (registro.find(obtener === JSON.parse(localStorage.getItem('posts')))) {
+      resolve (registro)
+    }
+  });
+}; */
