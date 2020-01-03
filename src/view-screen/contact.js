@@ -11,7 +11,7 @@ export const showComentarios = (data) => {
       <div class="comment-box">
       <section class="comment-head">
         <h6 class="comment-name by-author">${comentario.nombre}</h6>
-        <span>${date.getMonth()}</span>
+        <span>${date.toUTCString()}</span>
         <p>eliminar</p>
         <i class="fa fa-reply"></i>
         <i class="fa fa-heart"></i>
