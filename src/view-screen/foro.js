@@ -1,4 +1,5 @@
 import { showComentarios } from './contact.js';
+import { guardarPost } from '../function.js';
 
 export default () => {
   const viewForo = `
@@ -23,23 +24,11 @@ export default () => {
 
   const btnCompartir = divElemt.querySelector('#share');
   btnCompartir.addEventListener('click', () => {
-    if (localStorage.getItem('posts') === null) {
-      const objPost1 = {
-        nombre: localStorage.getItem('nombreUsuario'),
-        texto: divElemt.querySelector('#commit').value,
-      };
-      localStorage.setItem('posts', JSON.stringify([objPost1]));
-    } else {
-      const dataPosts1 = JSON.parse(localStorage.getItem('posts'));
-      const objPost = {
-        nombre: localStorage.getItem('nombreUsuario'),
-        texto: divElemt.querySelector('#commit').value,
-      };
-      dataPosts1.push(objPost);
-      localStorage.setItem('posts', JSON.stringify(dataPosts1));
-      // console.log(dataPosts1);
-      divElemt.querySelector('#commits').innerHTML = showComentarios(JSON.parse(localStorage.getItem('posts')));
-    }
+    const post = divElemt.querySelector('#commit').value;
+    guardarPost(post)
+      .then((res) => {
+        divElemt.querySelector('#commits').innerHTML = showComentarios(res);
+      });
   });
 
   return divElemt;
