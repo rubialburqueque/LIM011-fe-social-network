@@ -20,7 +20,9 @@ export default () => {
 
   const divElemt = document.createElement('div');
   /* divElemt.classList.add('position'); */
-  divElemt.innerHTML = viewForo;
+  divElemt.innerHTML = viewForo;ç
+  
+  divElemt.querySelector('#nombre').innerHTML = localStorage.getItem('nombreUsuario')
 
   const btnCompartir = divElemt.querySelector('#share');
   btnCompartir.addEventListener('click', () => {
