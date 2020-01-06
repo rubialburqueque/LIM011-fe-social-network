@@ -1,9 +1,9 @@
 
 export const showComentarios = (data) => {
-  let viewContact = '';
+  let viewComments = '';
   data.forEach((comentario) => {
     const date = new Date(comentario.fecha);
-    viewContact += `
+    viewComments += `
     <div class="publicaciones">
       <!-- Avatar -->
       <figure class="comment-avatar"> <img src="aqui va una foto de avatar.jpg" alt=""/> </figure>
@@ -13,20 +13,23 @@ export const showComentarios = (data) => {
         <h6 class="comment-name by-author">${comentario.nombre}</h6>
         <span>${date.toUTCString()}</span>
         <p>eliminar</p>
-        <i class="fa fa-reply"></i>
-        <i class="fa fa-heart"></i>
+        <span class="icon-trash marginHome"></span>
+        <i class="icon-heart"></i>
       </section>
       <section class="comment-content">${comentario.texto}</section>
       <section class="comment-opinion">
         <p>Me gusta</p> <br>
         <p>Comentar</p>
-        <i class="fa fa-reply"></i>
-        <i class="fa fa-heart"></i>
+        <span class="icon-thumbs-up marginHome"></span>
+        <span class="icon-comment marginHome"></span>
       </section>
     </div>
   </div> `;
   });
-  return viewContact;
+  const divElemt = document.createElement('div');
+  divElemt.classList.add('position');
+  divElemt.innerHTML = viewComments;  
+  return viewComments;
 };
 
 

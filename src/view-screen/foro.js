@@ -1,4 +1,4 @@
-import { showComentarios } from './contact.js';
+import { showComentarios } from './comments.js';
 import { guardarPost } from '../function.js';
 
 export default () => {
