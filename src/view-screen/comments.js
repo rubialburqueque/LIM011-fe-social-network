@@ -8,7 +8,7 @@ export const showComentarios = (data) => {
       <!-- Avatar -->
       <figure class="comment-avatar"> <img src="aqui va una foto de avatar.jpg" alt=""/> </figure>
       <!-- Contenedor del Comentario -->
-      <div class="comment-box">
+      <div class="comment-box" "icons">
       <section class="comment-head">
         <h6 class="comment-name by-author">${comentario.nombre}</h6>
         <span>${date.toUTCString()}</span>
