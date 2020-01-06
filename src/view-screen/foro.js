@@ -22,6 +22,8 @@ export default () => {
   /* divElemt.classList.add('position'); */
   divElemt.innerHTML = viewForo;
 
+  divElemt.querySelector('#nombre').innerHTML = localStorage.getItem('nombreUsuario');
+
   const btnCompartir = divElemt.querySelector('#share');
   btnCompartir.addEventListener('click', () => {
     const post = divElemt.querySelector('#commit').value;

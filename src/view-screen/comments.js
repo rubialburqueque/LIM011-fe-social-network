@@ -28,7 +28,7 @@ export const showComentarios = (data) => {
   });
   const divElemt = document.createElement('div');
   divElemt.classList.add('position');
-  divElemt.innerHTML = viewComments;  
+  divElemt.innerHTML = viewComments;
   return viewComments;
 };
 
