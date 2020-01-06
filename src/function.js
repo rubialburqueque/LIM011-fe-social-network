@@ -56,12 +56,19 @@ export const guardarPost = (post) => {
     }
   );
 };
+const registroPosts = JSON.parse(localStorage.getItem('posts'));
+localStorage.getItem(registroPosts[2]);
+sessionStorage.removeItem(registroPosts[2]);
+registroPosts.push(localStorage.setItem('posts', JSON.stringify(registroPosts)));
+// localStorage.setItem('posts', JSON.stringify(registroPosts));
 
 
-/* const obtenerDatos = obtener => {
-  return new Promise ((resolve, reject) => {
-    if (registro.find(obtener === JSON.parse(localStorage.getItem('posts')))) {
-      resolve (registro)
-    }
-  });
-}; */
+
+/* const obtenerPost = registroPosts.filter(Posts => Posts.nombre === nombreUsuario);
+if (obtenerPost.length >= 1){
+    localStorage.setItem('postUsuario', obtenerPost[0].texto);
+  }*/
+  
+
+
+
