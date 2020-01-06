@@ -172,13 +172,9 @@ Style for foro
 }
 
 .ePosts{
-width: 95%;
-height: 70px;
+width: 60%;
+height: 70%;
 padding: 10px;
-box-sizing: border-box;
-margin: 20px auto;
-margin-top: 50px;
-resize: none;
 }
 
 /*------------------------------------------------------------------------

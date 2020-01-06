@@ -3,13 +3,17 @@ import { guardarPost } from '../function.js';
 
 export default () => {
   const viewForo = `
-  <section id="foro" ><p class="titulo">girl ASK</p>
+  <section id="foro" ><p class="titulo">Girl Ask</p>
     <div id = "addComent">
-      <img src = "../imagen/foto.jpeg" class = "foto" /><p id = "nombre"></p>
+      <img src = "./imagen/foto.jpeg" class = "foto" /><p id = "nombre"></p>
     </div>
     </br>
     <input id="commit" class="ePosts" type="text" placeholder="¿Qué estás pensando?">
     </br>
+    <select id="publicOrNot">
+    <option value="publico">Comentario Público</option>
+    <option value="privado">Comentario Privado</option>
+    </select>
     <button type="button" class="button"  id="share">compartir</button>
     <div>
     <section id = "commits"> 
