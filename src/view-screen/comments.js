@@ -18,7 +18,7 @@ export const showComentarios = (data) => {
       </section>
       <section class="comment-content">${comentario.texto}</section>
       <section class="comment-opinion">
-        <p>Me gusta</p> <br>
+        <p>Me gusta</p>
         <p>Comentar</p>
         <span class="icon-thumbs-up marginHome"></span>
         <span class="icon-comment marginHome"></span>
@@ -28,7 +28,7 @@ export const showComentarios = (data) => {
   });
   const divElemt = document.createElement('div');
   divElemt.classList.add('position');
-  divElemt.innerHTML = viewComments;  
+  divElemt.innerHTML = viewComments;
   return viewComments;
 };
 
