@@ -1,4 +1,4 @@
-import { showComentarios } from './contact.js';
+import { showComentarios } from './comments.js';
 import { guardarPost } from '../function.js';
 
 export default () => {
@@ -8,9 +8,9 @@ export default () => {
       <img src = "../imagen/foto.jpeg" class = "foto" /><p id = "nombre"></p>
     </div>
     </br>
-    <input id="commit" type="text" placeholder="¿Que quieres compartir?....">
+    <input id="commit" class="ePosts" type="text" placeholder="¿Qué estás pensando?">
     </br>
-    <button type="button" id="share">compartir</button>
+    <button type="button" class="button"  id="share">compartir</button>
     <div>
     <section id = "commits"> 
     

@@ -16,8 +16,6 @@ export default () => {
         <input type="password" id="password" class="inputs-register"></br>
         <label for="confirmPassword" class="label">Confirm password:</label></br>
         <input type="password" id="confirmPassword" class="inputs-register"></br>
-        <input type="radio" id="acepto">
-        <label for="acepto" class="label">He leído los términos y acepto.</label></br>
         <input type="submit" class="button">
     </form>
 </div>`;

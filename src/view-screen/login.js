@@ -2,12 +2,13 @@
 export default () => {
   const viewHome = `
     <section id="home">
+      <h1><img src="./imagen/computadora.png" class="comput"> </h1>
       <p class="titulo"><strong>!Bienvenida!</strong></p>
       <form id="log">
-        <span class="icon-user inputsHome"></span>
+        <span class="icon-user marginHome"></span>
         <input id="userName" type="text" name="user" placeholder="Ingresar usuario" class="inputsHome">
         </br>
-        <span class="icon-key key"></span>
+        <span class="icon-key marginHome"></span>
         <input id="password" type="password" name="password" placeholder="Ingresar contraseña" class="inputsHome">
         <p id="error-message" class="text-center error-message"></p>
       </form>
@@ -22,8 +23,7 @@ export default () => {
       </br>
       <input id="login" type="button" value="INGRESA" class="button">
       <p><strong>¿No tienes una cuenta?<br><a href="#/register" class="icons">Regístrate</a></strong></p>
-    </section>
-    <img src = "./imagen/computadora.png" alt="" class = "logo-computer"/>`;
+    </section>`;
 
   const divElemt = document.createElement('div');
   divElemt.classList.add('position');
