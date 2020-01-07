@@ -1,5 +1,5 @@
-import { showComentarios } from './comments.js';
 import { guardarPost } from '../function.js';
+import { elementoPost } from './comments.js';
 
 export default () => {
   const viewForo = `
@@ -33,7 +33,10 @@ export default () => {
     const post = divElemt.querySelector('#commit').value;
     guardarPost(post)
       .then((res) => {
-        divElemt.querySelector('#commits').innerHTML = showComentarios(res);
+        res.forEach((dataDeUnPost, index) => {
+          const nodoPost = elementoPost(dataDeUnPost, index);
+          divElemt.querySelector('#commits').appendChild(nodoPost);
+        });
       });
   });
 

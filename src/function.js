@@ -40,6 +40,7 @@ export const guardarPost = (post) => {
           nombre: localStorage.getItem('nombreUsuario'),
           texto: post,
           fecha: new Date(),
+          id : i += 1,
         };
         localStorage.setItem('posts', JSON.stringify([objPost1]));
       } else {
@@ -48,6 +49,7 @@ export const guardarPost = (post) => {
           nombre: localStorage.getItem('nombreUsuario'),
           texto: post,
           fecha: new Date(),
+          id : i += 1,
         };
         dataPosts1.push(objPost);
         localStorage.setItem('posts', JSON.stringify(dataPosts1));
@@ -56,19 +58,3 @@ export const guardarPost = (post) => {
     }
   );
 };
-const registroPosts = JSON.parse(localStorage.getItem('posts'));
-localStorage.getItem(registroPosts[2]);
-sessionStorage.removeItem(registroPosts[2]);
-registroPosts.push(localStorage.setItem('posts', JSON.stringify(registroPosts)));
-// localStorage.setItem('posts', JSON.stringify(registroPosts));
-
-
-
-/* const obtenerPost = registroPosts.filter(Posts => Posts.nombre === nombreUsuario);
-if (obtenerPost.length >= 1){
-    localStorage.setItem('postUsuario', obtenerPost[0].texto);
-  }*/
-  
-
-
-
