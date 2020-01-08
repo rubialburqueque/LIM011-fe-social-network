@@ -56,12 +56,3 @@ export const guardarPost = (post) => {
     }
   );
 };
-
-
-/* const obtenerDatos = obtener => {
-  return new Promise ((resolve, reject) => {
-    if (registro.find(obtener === JSON.parse(localStorage.getItem('posts')))) {
-      resolve (registro)
-    }
-  });
-}; */
