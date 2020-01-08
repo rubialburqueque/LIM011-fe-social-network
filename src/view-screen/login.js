@@ -1,32 +1,36 @@
 
 export default () => {
   const viewHome = `
-    <section id="home">
-      <h1><img src="./imagen/computadora.png" class="comput"> </h1>
-      <p class="titulo"><strong>!Bienvenida!</strong></p>
+    <section class ="wrapper" id="home">
+    <div class="imgLogin">
+    <h1><img src="./imagen/computadora.png"> </h1>
+    </div>
+    <div class="partLogin">
+      <p>!Bienvenida!</p>
       <form id="log">
-        <span class="icon-user-circle-o marginHome"></span>
+        <span class="icon-user-circle-o iconClass"></span>
         <input id="userName" type="text" name="user" placeholder="Ingresar usuario" class="inputsHome">
         </br>
-        <span class="icon-lock marginHome"></span>
+        <span class="icon-lock iconClass"></span>
         <input id="password" type="password" name="password" placeholder="Ingresar contraseña" class="inputsHome">
         <p id="error-message" class="text-center error-message"></p>
       </form>
       </br>
       <p>Tambien puedes ingresar con ...</p>
       </br>
-      <section class="icons">
-        <span class="icon-google marginHome"></span>
-        <span class="icon-facebook marginHome"></span>
+      <section>
+        <span class="icon-google iconClass"></span>
+        <span class="icon-facebook iconClass"></span>
         </section>
       </br>
       <input id="login" type="button" value="INGRESA" class="button">
-      <p><strong>¿No tienes una cuenta?<br><a href="#/register" class="icons">Regístrate</a></strong></p>
+      <p>¿No tienes una cuenta?<br><a href="#/register" class="icons">Regístrate</a></p>
+      </div>
     </section>`;
 
   const divElemt = document.createElement('div');
-  divElemt.classList.add('position');
   divElemt.innerHTML = viewHome;
+  // divElemt.className='wrapper';
   const registers = JSON.parse(localStorage.getItem('registro'));
   const btnLogin = divElemt.querySelector('#login');
   // eslint-disable-next-line no-console

@@ -3,7 +3,7 @@ import { elementoPost } from './comments.js';
 
 export default () => {
   const viewForo = `
-  <section id="foro" ><p class="titulo">Girl Ask</p>
+  <section id="foro"><p class="titulo">Girl Ask</p>
     <div id = "addComent">
       <img src = "./imagen/foto.jpeg" class = "foto" /><p id = "nombre"></p>
     </div>

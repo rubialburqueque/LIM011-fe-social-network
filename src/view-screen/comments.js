@@ -8,20 +8,21 @@ export const elementoPost = (comentario, index) => {
       <!-- Avatar -->
       <figure class="comment-avatar"> <img src="./imagen/usuario.png" alt=""/> </figure>
       <!-- Contenedor del Comentario -->
-      <div class="comment-box" "icons">
-      <section class="comment-head">
+      <div class="comment-box">
+      <section class="comment-head iconClass">
         <h6 class="comment-name by-author">${comentario.nombre}</h6>
-        <span>${date.toUTCString()}</span>
-        <i id="dssd" class="icon-user-secret"></i>
-        <i class="icon-pencil"></i>
-        <button id="delete-${index}" class="icon-trash-1"></button>
+        <span>${date.toString()}</span>
+        <i id="dssd" class="icon-user-secret iconClass"></i>
+        <button class="icon-pencil iconClass"></button>
+        <button id="delete-${index}" class="icon-trash-1 iconClass"></button>
       </section>
       <section class="comment-content">${comentario.texto}</section>
       <section class="comment-opinion">
-      <i class="icon-heart" id=meEncanta></i>
-      <button type="button" id="comentarComentario" <i class="icon-chat"></i>comentar</button>
+      <button class="icon-heart iconClass" onClick="contadorMeEncanta()"></button>
+      <button type="button" id="comentarComentario" <i class="icon-chat iconClass"></i>comentar</button>
       </section>
-    </div>`;
+    </div>
+  </div> `;
 
   const registroPosts = JSON.parse(localStorage.getItem('posts'));
   const deletePost = onlyComment.querySelector(`#delete-${index}`);
@@ -39,3 +40,35 @@ export const elementoPost = (comentario, index) => {
   });
   return onlyComment;
 };
+
+  // const likeButtons = document.divElemt.querySelector('#meEncanta');
+  //   for (let i = 0; i < likeButtons.length; i++) {
+  //     likeButtons[i].addEventListener("click", contadorMeEncanta())
+  //     }
+
+//   const i=0;
+//   function contadorMeEncanta(){
+//     while(i<=0){ i++;
+//     const meEncanta=divElemt.querySelector('#meEncanta');
+//     meEncanta.value= 'Presiona aqui('+i+')';
+//     }
+//   console.log(contadorMeEncanta)
+//   return viewComments;
+// };
+  
+//   const registroPosts = JSON.parse(localStorage.getItem('posts'));
+//   const deletePost = onlyComment.querySelector(`#delete-${index}`);
+//   deletePost.addEventListener('click', () => {
+//     registroPosts.forEach((element, index1Post) => {
+//       console.log(element);
+//       console.log(index1Post);
+//       const newPost = [];
+//       if (index1Post !== index) {
+//         console.log(newPost);
+//       }
+//       });
+//     console.log(index)
+//     // sessionStorage.removeItem(deletePost);
+
+return onlyComment;
+};   
