@@ -14,7 +14,7 @@ body {
 }
 
 .iconClass{
-  color: #e8405b;
+  color: #551a8b;
 }
 
 .logo {
@@ -275,6 +275,6 @@ color:black;
   border-radius: 3px;
 }
 #commit{
-  width: 150%;
+  width: 700px;
   height: 90px;
 }
