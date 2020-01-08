@@ -23,22 +23,19 @@ export const elementoPost = (comentario, index) => {
       </section>
     </div>`;
 
-  
   const registroPosts = JSON.parse(localStorage.getItem('posts'));
   const deletePost = onlyComment.querySelector(`#delete-${index}`);
   deletePost.addEventListener('click', () => {
+    const newPost = [];
     registroPosts.forEach((element, index1Post) => {
       console.log(element);
       console.log(index1Post);
-      const newPost = [];
       if (index1Post !== index) {
+        newPost.push(element);
         console.log(newPost);
       }
-      
-      })
-    console.log(index)
-    // sessionStorage.removeItem(deletePost);
-    console.log('holasssss')
     });
+    localStorage.setItem('posts', JSON.stringify(newPost));
+  });
   return onlyComment;
 };
