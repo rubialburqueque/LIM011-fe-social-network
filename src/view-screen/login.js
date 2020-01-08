@@ -2,13 +2,16 @@
 export default () => {
   const viewHome = `
     <section id="home">
-      <h1><img src="./imagen/computadora.png" class="comput"> </h1>
+    <div class="imgLogin">
+    <h1><img src="./imagen/computadora.png" class="comput"> </h1>
+    </div>
+    <div class="partLogin">
       <p class="titulo"><strong>!Bienvenida!</strong></p>
       <form id="log">
-        <span class="icon-user-circle-o marginHome"></span>
+        <span class="icon-user-circle-o "></span>
         <input id="userName" type="text" name="user" placeholder="Ingresar usuario" class="inputsHome">
         </br>
-        <span class="icon-lock marginHome"></span>
+        <span class="icon-lock"></span>
         <input id="password" type="password" name="password" placeholder="Ingresar contraseña" class="inputsHome">
         <p id="error-message" class="text-center error-message"></p>
       </form>
@@ -16,12 +19,13 @@ export default () => {
       <p>Tambien puedes ingresar con ...</p>
       </br>
       <section class="icons">
-        <span class="icon-google marginHome"></span>
-        <span class="icon-facebook marginHome"></span>
+        <span class="icon-google"></span>
+        <span class="icon-facebook"></span>
         </section>
       </br>
       <input id="login" type="button" value="INGRESA" class="button">
       <p><strong>¿No tienes una cuenta?<br><a href="#/register" class="icons">Regístrate</a></strong></p>
+      </div>
     </section>`;
 
   const divElemt = document.createElement('div');

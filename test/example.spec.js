@@ -1,6 +1,6 @@
-import { example } from '../src/example.js';
+import { correctRegister, guardarPost } from '../src/function.js';
 
-describe('example', () => {
+describe('correctRegister', () => {
   it('debería ser una función', () => {
     expect(typeof example).toBe('function');
   });

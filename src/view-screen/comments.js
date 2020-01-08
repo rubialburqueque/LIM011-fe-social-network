@@ -18,7 +18,7 @@ export const showComentarios = (data) => {
       </section>
       <section class="comment-content">${comentario.texto}</section>
       <section class="comment-opinion">
-      <i class="icon-heart" id=meEncanta></i>
+      <input type="button" class="icon-heart" id=meEncanta value="presiona aqui" onClick="javascript: contadorMeEncanta()" ></input>
       <button type="button" id="comentarComentario" <i class="icon-chat"></i>comentar</button>
       
       </section>
@@ -28,6 +28,15 @@ export const showComentarios = (data) => {
   const divElemt = document.createElement('div');
   divElemt.classList.add('position');
   divElemt.innerHTML = viewComments;
+
+  const i=0;
+  function contadorMeEncanta(){
+    while(i<=0){
+    i++;
+    const meEncanta=divElemt.querySelector('#meEncanta');
+    meEncanta.value= 'Presiona aqui('+i+')';
+    }
+  console.log(contadorMeEncanta)}
   return viewComments;
 };
 
