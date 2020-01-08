@@ -5,8 +5,7 @@
 }
 
 body {
-  background: #fff;
-  color: rgba(255, 255, 255, 0.87);
+  color:  #e8405b;
   font-family: 'Montserrat', sans-serif;
   background: url(./imagen/fondo.jpg) no-repeat center top fixed;
   background-size: cover;
@@ -14,31 +13,17 @@ body {
   height: 100%;
 }
 
-
-.pantalla {
-  padding-top: 6em;
-  min-height: 95vh;
-  flex-wrap: wrap; 
-}
-
-h1 {
-    width: 50%;
+.iconClass{
+  color: #e8405b;
 }
 
 .logo {
     position: absolute  ;
-    margin: 1rem 0 0 3.8rem;
-}
-
-.computer{
-  width: 500px;
-  flex-direction: flex-star;
-  top: 0;
-  left: 0;
+    margin: 0.8rem 0 0 1.2rem;
 }
 
 header {
-    position: fixed;
+    position: none;
     width: 100%;
     height: 7rem;
     top: 0;
@@ -77,14 +62,13 @@ nav ul li a {
   left: 0;
   width: 100%;
   height: 100vh;
-  background: rgba(255, 0, 98, 0.89);
+  background: #e8405b;
   transition: all 0.7s;
   transform: translateX(-100%);
 }
 
 .menu ul li a {
   display: block;
-  color: #fff;
   height: 10px;
   padding: 20px;
   text-decoration: none;
@@ -93,7 +77,7 @@ nav ul li a {
 
 .menu ul li a:hover {
     cursor: pointer;
-    background: rgba(255, 0, 98, 0.89);
+    background: #e8405b;
 }
 
 #bar-menu:checked~.menu {
@@ -111,18 +95,32 @@ nav ul li a::selection ~.menu{
 /*------------------------------------------------------------------------
 Style for login
 ------------------------------------------------------------------------*/
-.imgLogin{
-  
+.wrapper{
+  display: flex;
+  flex-wrap:wrap ;
+  justify-content: space-between;
+  align-items: center;
+  /* border: 2px solid white;
+  background-color: blue; */
+
 }
+
 .partLogin{
+  padding: 1rem;
+  margin: 0 1em 0 2em;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  /* justify-content: center; */
+
 
 }
 
-.titulo{
-    margin: 0 5px 6px 50px;
-    font-size: 40px;
-    font-family: 'Montserrat', sans-serif;
-    color: #fff;
+.imgLogin{
+  width: 50%;
+  margin:  0 1em 0 1em;
+  flex:  2 1 auto;
+  display: flex;
+
 }
 
 .button{
@@ -130,22 +128,24 @@ Style for login
     width: 100px;
     height: 30px;
     margin: 10px 10px 10px 60px;
-    background-color: rgba(255, 0, 98, 0.89);
+    background-color:  #e8405b;
     color: #fff;
+    border-radius: 4px;
 }
 
 /*------------------------------------------------------------------------
 Style for register
 ------------------------------------------------------------------------*/
 
-.inputs-register{
+input{
     margin: 10px 30px 10px 30px;
     width: 160px;
     height: 20px;
+    background-color: #fff;
+    border-radius: 4px;
+
 }
-.container-register{
-    margin-left: 1rem;
-}
+
 .label{
     font-weight: 500;
 }
@@ -160,21 +160,17 @@ Style for foro
 }
 
 .ePosts{
-width: 60%;
-height: 70%;
-padding: 10px;
+  width: 680px
 }
 
 /*------------------------------------------------------------------------
 Style for footer
 ------------------------------------------------------------------------*/
 
-.footer {
-    width: 100%;
-    height: 80px;
-    text-align: right;
-    color: #fff;
-    background: url(./imagen/footer.png);
+footer {
+    color: #551a8b;
+    margin: 0.8rem;
+    text-align: left;
     font-size: 12px;
 }
 
@@ -269,8 +265,7 @@ color:black;
 
 .comment-name.by-author{
   content: 'autor';
-  /*background: #03658c;*/
-  color: rgba(255, 0, 98, 0.89);
+  color:  #e8405b;
   font-size: 12px;
   padding: 3px 5px;
   font-weight: 700;
