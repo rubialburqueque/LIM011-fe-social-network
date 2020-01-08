@@ -32,14 +32,12 @@ export default () => {
 
   btnCompartir.addEventListener('click', () => {
     const post = divElemt.querySelector('#commit').value;
-    guardarPost(post)
-      .then((res) => {
-        res.forEach((dataDeUnPost, index) => {
-          const nodoPost = elementoPost(dataDeUnPost, index);
-          divElemt.querySelector('#commits').appendChild(nodoPost);
-        });
-      });
+    guardarPost(post);
+    const infoPost = JSON.parse(localStorage.getItem('posts'));
+    infoPost.forEach((dataDeUnPost, index) => {
+      const nodoPost = elementoPost(dataDeUnPost, index);
+      divElemt.querySelector('#commits').appendChild(nodoPost);
+    });
   });
-
   return divElemt;
 };
