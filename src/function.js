@@ -40,7 +40,6 @@ export const guardarPost = (post) => {
           nombre: localStorage.getItem('nombreUsuario'),
           texto: post,
           fecha: new Date(),
-          id : i += 1,
         };
         localStorage.setItem('posts', JSON.stringify([objPost1]));
       } else {
@@ -49,7 +48,6 @@ export const guardarPost = (post) => {
           nombre: localStorage.getItem('nombreUsuario'),
           texto: post,
           fecha: new Date(),
-          id : i += 1,
         };
         dataPosts1.push(objPost);
         localStorage.setItem('posts', JSON.stringify(dataPosts1));

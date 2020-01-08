@@ -29,6 +29,7 @@ export default () => {
   divElemt.querySelector('#nombre').innerHTML = localStorage.getItem('nombreUsuario');
 
   const btnCompartir = divElemt.querySelector('#share');
+
   btnCompartir.addEventListener('click', () => {
     const post = divElemt.querySelector('#commit').value;
     guardarPost(post)

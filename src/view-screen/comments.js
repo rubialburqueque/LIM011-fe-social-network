@@ -1,9 +1,10 @@
+import { guardarPost } from '../function.js';
+
 export const elementoPost = (comentario, index) => {
   const onlyComment = document.createElement('div');
   onlyComment.classList.add('publicaciones');
   const date = new Date(comentario.fecha);
-  onlyComment.innerHTML =
-  `
+  onlyComment.innerHTML = `
       <!-- Avatar -->
       <figure class="comment-avatar"> <img src="./imagen/usuario.png" alt=""/> </figure>
       <!-- Contenedor del Comentario -->
@@ -22,11 +23,22 @@ export const elementoPost = (comentario, index) => {
       </section>
     </div>`;
 
+  
   const registroPosts = JSON.parse(localStorage.getItem('posts'));
-  const deletePost = onlyComment.querySelector('#delete');
-  deletePost.addEventListener('click'() => {
-    console.log('hola rubi');
-    sessionStorage.removeItem(registroPosts);
-  });
+  const deletePost = onlyComment.querySelector(`#delete-${index}`);
+  deletePost.addEventListener('click', () => {
+    registroPosts.forEach((element, index1Post) => {
+      console.log(element);
+      console.log(index1Post);
+      const newPost = [];
+      if (index1Post !== index) {
+        console.log(newPost);
+      }
+      
+      })
+    console.log(index)
+    // sessionStorage.removeItem(deletePost);
+    console.log('holasssss')
+    });
   return onlyComment;
 };
