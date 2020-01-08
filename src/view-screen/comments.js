@@ -24,6 +24,23 @@ export const elementoPost = (comentario, index) => {
     </div>
   </div> `;
 
+  const registroPosts = JSON.parse(localStorage.getItem('posts'));
+  const deletePost = onlyComment.querySelector(`#delete-${index}`);
+  deletePost.addEventListener('click', () => {
+    const newPost = [];
+    registroPosts.forEach((element, index1Post) => {
+      console.log(element);
+      console.log(index1Post);
+      if (index1Post !== index) {
+        newPost.push(element);
+        console.log(newPost);
+      }
+    });
+    localStorage.setItem('posts', JSON.stringify(newPost));
+  });
+  return onlyComment;
+};
+
   // const likeButtons = document.divElemt.querySelector('#meEncanta');
   //   for (let i = 0; i < likeButtons.length; i++) {
   //     likeButtons[i].addEventListener("click", contadorMeEncanta())
