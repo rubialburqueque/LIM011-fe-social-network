@@ -1,5 +1,3 @@
-import { guardarPost } from '../function.js';
-
 export const elementoPost = (comentario, index) => {
   const onlyComment = document.createElement('div');
   onlyComment.classList.add('publicaciones');
@@ -29,22 +27,27 @@ export const elementoPost = (comentario, index) => {
   deletePost.addEventListener('click', () => {
     const newPost = [];
     registroPosts.forEach((element, index1Post) => {
-      console.log(element);
-      console.log(index1Post);
       if (index1Post !== index) {
         newPost.push(element);
-        console.log(newPost);
       }
     });
     localStorage.setItem('posts', JSON.stringify(newPost));
+
+    const postsActuales = JSON.parse(localStorage.getItem('posts'));
+    const divPadrePosts = document.querySelector('#commits');
+    divPadrePosts.innerHTML = '';
+    postsActuales.forEach((element, indice) => {
+      const newNodoPost = elementoPost(element, indice);
+      divPadrePosts.appendChild(newNodoPost);
+    });
   });
   return onlyComment;
 };
 
-  // const likeButtons = document.divElemt.querySelector('#meEncanta');
-  //   for (let i = 0; i < likeButtons.length; i++) {
-  //     likeButtons[i].addEventListener("click", contadorMeEncanta())
-  //     }
+// const likeButtons = document.divElemt.querySelector('#meEncanta');
+//   for (let i = 0; i < likeButtons.length; i++) {
+//     likeButtons[i].addEventListener("click", contadorMeEncanta())
+//     }
 
 //   const i=0;
 //   function contadorMeEncanta(){
@@ -55,7 +58,7 @@ export const elementoPost = (comentario, index) => {
 //   console.log(contadorMeEncanta)
 //   return viewComments;
 // };
-  
+
 //   const registroPosts = JSON.parse(localStorage.getItem('posts'));
 //   const deletePost = onlyComment.querySelector(`#delete-${index}`);
 //   deletePost.addEventListener('click', () => {
@@ -69,6 +72,3 @@ export const elementoPost = (comentario, index) => {
 //       });
 //     console.log(index)
 //     // sessionStorage.removeItem(deletePost);
-
-return onlyComment;
-};   
