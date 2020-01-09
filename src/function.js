@@ -32,23 +32,29 @@ export const correctRegister = (name, lastname, birthday, email, password, confi
 
 // /* promesas para obtener o guardar datos en localStorage */
 
-export const guardarPost = (post) => {
-  if (localStorage.getItem('posts') === null) {
-    const objPost1 = {
-      nombre: localStorage.getItem('nombreUsuario'),
-      texto: post,
-      fecha: new Date(),
-    };
-    localStorage.setItem('posts', JSON.stringify([objPost1]));
+export const getItemLocalStorage = (nombreDeItem) => {
+  const data = JSON.parse(localStorage.getItem(nombreDeItem));
+  return data;
+}
+
+export const saveItemLocalStorage = (nombreDeItem, dataParaGuardar) => {
+  localStorage.setItem(nombreDeItem, JSON.stringify(dataParaGuardar));
+}
+
+export const agregaObjPostAlArr = (textoDelPost, dataDeItemPosts, nombreDeUsuario) => {
+  const objPost = {
+    nombre: nombreDeUsuario,
+    texto: textoDelPost,
+    fecha: new Date(),
+  };
+
+  if (dataDeItemPosts === null) {
+    const arr = [];
+    arr.push(objPost);
+    return arr;
   } else {
-    const dataPosts1 = JSON.parse(localStorage.getItem('posts'));
-    const objPost = {
-      nombre: localStorage.getItem('nombreUsuario'),
-      texto: post,
-      fecha: new Date(),
-    };
-    dataPosts1.push(objPost);
-    localStorage.setItem('posts', JSON.stringify(dataPosts1));
+    dataDeItemPosts.push(objPost);
+    return dataDeItemPosts;
   }
-  return (JSON.parse(localStorage.getItem('posts')));
+  
 };

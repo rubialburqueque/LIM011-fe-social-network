@@ -32,8 +32,11 @@ export default () => {
 
   btnCompartir.addEventListener('click', () => {
     const post = divElemt.querySelector('#commit').value;
-    guardarPost(post);
-    const infoPost = JSON.parse(localStorage.getItem('posts'));
+    const dataDePosts = getItemLocalStorage('posts');
+    const nombre = getItemLocalStorage('nombreUsuario');
+    const arrNuevo = agregaObjPostAlArr(post, dataDePosts, nombre);
+    saveItemLocalStorage('posts', arrNuevo);
+    const infoPost = getItemLocalStorage('posts');
     infoPost.forEach((dataDeUnPost, index) => {
       const nodoPost = elementoPost(dataDeUnPost, index);
       divElemt.querySelector('#commits').appendChild(nodoPost);
