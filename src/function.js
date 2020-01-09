@@ -30,31 +30,31 @@ export const correctRegister = (name, lastname, birthday, email, password, confi
 };
 
 
-// /* promesas para obtener o guardar datos en localStorage */
+/* obtener o guardar datos en localStorage */
 
 export const getItemLocalStorage = (nombreDeItem) => {
-  const data = JSON.parse(localStorage.getItem(nombreDeItem));
+  const data = localStorage.getItem(nombreDeItem);
   return data;
-}
+};
 
 export const saveItemLocalStorage = (nombreDeItem, dataParaGuardar) => {
   localStorage.setItem(nombreDeItem, JSON.stringify(dataParaGuardar));
-}
+};
 
-export const agregaObjPostAlArr = (textoDelPost, dataDeItemPosts, nombreDeUsuario) => {
+export const agregaObjPostAlArr = (textoDelPost, dataDePosts, nombreDeUsuario) => {
+  console.log('gfhgdh', dataDePosts);
+
   const objPost = {
     nombre: nombreDeUsuario,
     texto: textoDelPost,
     fecha: new Date(),
   };
 
-  if (dataDeItemPosts === null) {
+  if (dataDePosts === null) {
     const arr = [];
     arr.push(objPost);
     return arr;
-  } else {
-    dataDeItemPosts.push(objPost);
-    return dataDeItemPosts;
   }
-  
+  JSON.parse(dataDePosts.push(objPost));
+  return dataDePosts;
 };

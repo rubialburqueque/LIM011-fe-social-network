@@ -1,5 +1,5 @@
-import { guardarPost } from '../function.js';
 import { elementoPost } from './comments.js';
+import { getItemLocalStorage, agregaObjPostAlArr, saveItemLocalStorage } from '../function.js';
 
 export default () => {
   const viewForo = `
@@ -34,9 +34,9 @@ export default () => {
     const post = divElemt.querySelector('#commit').value;
     const dataDePosts = getItemLocalStorage('posts');
     const nombre = getItemLocalStorage('nombreUsuario');
-    const arrNuevo = agregaObjPostAlArr(post, dataDePosts, nombre);
+    const arrNuevo = agregaObjPostAlArr(post, JSON.parse(dataDePosts), nombre);
     saveItemLocalStorage('posts', arrNuevo);
-    const infoPost = getItemLocalStorage('posts');
+    const infoPost = JSON.parse(getItemLocalStorage('posts'));
     infoPost.forEach((dataDeUnPost, index) => {
       const nodoPost = elementoPost(dataDeUnPost, index);
       divElemt.querySelector('#commits').appendChild(nodoPost);
