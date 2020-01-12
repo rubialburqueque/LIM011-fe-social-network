@@ -1,33 +1,33 @@
-let registers = [];
-let i = 0;
-
 export const correctRegister = (name, lastname, birthday, email, password, confirmPassword) => {
   if (name === '' || lastname === '' || birthday === '' || email === '' || password === '' || confirmPassword === '') {
     // eslint-disable-next-line no-alert
-    alert('Por favor completar campo');
+    alert('Por favor completar todos los campos');
   } else {
-    // eslint-disable-next-line no-console
-    console.log('register');
-    registers = JSON.parse(localStorage.getItem('registro'));
-    if (registers === null) {
-      registers = [];
-    }
-    registers.push({
-      nombre: name,
-      apellido: lastname,
-      id: i += 1,
-      cumpleaños: birthday,
-      correo: email,
-      contraseña: password,
-      confirmarContraseña: confirmPassword,
-    });
-    // eslint-disable-next-line no-console
-    console.log(registers);
 
-    localStorage.setItem('registro', JSON.stringify(registers));
+    registers = JSON.parse(localStorage.getItem('registro'));
   }
-  /* console.log(register); */
 };
+
+export const AddObjRegisterToArray = (nameUser, lastnameUser, birthdayUser,
+  emailUser, passwordUser, confirmPasswordUser, dataDeRegister) => {
+  const registerObj = {
+    nombre: nameUser,
+    apellido: lastnameUser,
+    cumpleaños: birthdayUser,
+    correo: emailUser,
+    contraseña: passwordUser,
+    confirmarContraseña: confirmPasswordUser,
+};
+
+  if (dataDeRegister === null) {
+const arrToRegister = [];
+dataDeRegister.push(registerObj);
+    return arrToRegister;
+} 
+dataDeRegister.push(registerObj);
+  return dataDeRegister
+};
+// localStorage.setItem('registro', JSON.stringify(registers));
 
 
 /* obtener o guardar datos en localStorage */
@@ -42,6 +42,7 @@ export const saveItemLocalStorage = (nombreDeItem, dataParaGuardar) => {
 };
 
 export const agregaObjPostAlArr = (textoDelPost, dataDePosts, nombreDeUsuario) => {
+  // eslint-disable-next-line no-console
   console.log('gfhgdh', dataDePosts);
 
   const objPost = {

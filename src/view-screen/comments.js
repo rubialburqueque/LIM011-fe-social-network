@@ -16,7 +16,7 @@ export const elementoPost = (comentario, index) => {
       </section>
       <section class="comment-content">${comentario.texto}</section>
       <section class="comment-opinion">
-      <button class="icon-heart iconClass" onClick="contadorMeEncanta()"></button>
+      <button class="icon-heart iconClass" id="contadorMeEncanta" onClick="contadorMeEncanta()"></button>
       <button type="button" id="comentarComentario" <i class="icon-chat iconClass"></i>comentar</button>
       </section>
     </div>
@@ -41,34 +41,15 @@ export const elementoPost = (comentario, index) => {
       divPadrePosts.appendChild(newNodoPost);
     });
   });
+  function contadorCorazon(element, index) {
+    let contador = 0;
+    divElemt.getElementById('contadorMeEncanta').onclick = function () {
+      contador++;
+      // eslint-disable-next-line no-alert
+      alert(contadorCorazon);
+    };
+  };
+
   return onlyComment;
 };
 
-// const likeButtons = document.divElemt.querySelector('#meEncanta');
-//   for (let i = 0; i < likeButtons.length; i++) {
-//     likeButtons[i].addEventListener("click", contadorMeEncanta())
-//     }
-
-//   const i=0;
-//   function contadorMeEncanta(){
-//     while(i<=0){ i++;
-//     const meEncanta=divElemt.querySelector('#meEncanta');
-//     meEncanta.value= 'Presiona aqui('+i+')';
-//     }
-//   console.log(contadorMeEncanta)
-//   return viewComments;
-// };
-
-//   const registroPosts = JSON.parse(localStorage.getItem('posts'));
-//   const deletePost = onlyComment.querySelector(`#delete-${index}`);
-//   deletePost.addEventListener('click', () => {
-//     registroPosts.forEach((element, index1Post) => {
-//       console.log(element);
-//       console.log(index1Post);
-//       const newPost = [];
-//       if (index1Post !== index) {
-//         console.log(newPost);
-//       }
-//       });
-//     console.log(index)
-//     // sessionStorage.removeItem(deletePost);
