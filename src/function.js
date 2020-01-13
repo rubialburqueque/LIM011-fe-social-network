@@ -9,6 +9,8 @@ export const correctRegister = (name, lastname, birthday, email, password, confi
     // eslint-disable-next-line no-console
     console.log('register');
     registers = JSON.parse(localStorage.getItem('registro'));
+
+
     if (registers === null) {
       registers = [];
     }
@@ -23,12 +25,9 @@ export const correctRegister = (name, lastname, birthday, email, password, confi
     });
     // eslint-disable-next-line no-console
     console.log(registers);
-
     localStorage.setItem('registro', JSON.stringify(registers));
   }
-  /* console.log(register); */
 };
-
 
 /* obtener o guardar datos en localStorage */
 
@@ -42,8 +41,6 @@ export const saveItemLocalStorage = (nombreDeItem, dataParaGuardar) => {
 };
 
 export const agregaObjPostAlArr = (textoDelPost, dataDePosts, nombreDeUsuario) => {
-  console.log('gfhgdh', dataDePosts);
-
   const objPost = {
     nombre: nombreDeUsuario,
     texto: textoDelPost,
@@ -55,6 +52,8 @@ export const agregaObjPostAlArr = (textoDelPost, dataDePosts, nombreDeUsuario) =
     arr.push(objPost);
     return arr;
   }
-  JSON.parse(dataDePosts.push(objPost));
+  dataDePosts.push(objPost);
   return dataDePosts;
 };
+
+export const suma = (a, b) => b + a;

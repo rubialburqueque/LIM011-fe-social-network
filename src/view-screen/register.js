@@ -30,7 +30,7 @@ export default () => {
     // eslint-disable-next-line no-console
     console.log('ingresa al button');
     const elementsRegister = formRegister.elements;
-    const requi = /\S+@\S+\.\S+/;
+    const requi = /\S+@\S+.\S+/;
     if (elementsRegister.password.value.length >= 6
         && elementsRegister.password.value === elementsRegister.confirmPassword.value) {
       if (requi.test(elementsRegister.email.value) === true) {
