@@ -1,10 +1,10 @@
-import { correctRegister } from '../function.js';
+import { correctRegister, getItemLocalStorage } from '../function.js';
 
 export default () => {
   const viewRegister = `
     <div class="container-register">
     <form id="formRegister">
-        <label for="name" class="label">Nombre:</label></br>
+        <label for="name" class="label" required >Nombre:</label></br>
         <input type="text" id="name" class="inputs-register"></br>
         <label for="lastNames" class="label">Apellidos:</label></br>
         <input type="text" id="lastName" class="inputs-register"></br>
@@ -27,12 +27,16 @@ export default () => {
   const formRegister = divElemt.querySelector('#formRegister');
   formRegister.addEventListener('submit', (event) => {
     event.preventDefault();
-    // eslint-disable-next-line no-console
-    console.log('ingresa al button');
     const elementsRegister = formRegister.elements;
+<<<<<<< HEAD
     const requi = /\S+@\S+.\S+/;
     if (elementsRegister.password.value.length >= 6
         && elementsRegister.password.value === elementsRegister.confirmPassword.value) {
+=======
+    const dataDeRegister= JSON.parse(getItemLocalStorage('registro'))
+    if (elementoRegister.email.value === /\S+@\S+.\S+/ && elementsRegister.password.value.length >= 6 && 
+       elementsRegister.password.value === elementsRegister.confirmPassword.value) {
+>>>>>>> ad1bfbe45beeb075f642f683d060db3c2509c72e
       if (requi.test(elementsRegister.email.value) === true) {
         correctRegister(elementsRegister.name.value,
           elementsRegister.lastName.value,
@@ -41,6 +45,7 @@ export default () => {
           elementsRegister.password.value,
           elementsRegister.confirmPassword.value);
       }
+      if()
       // eslint-disable-next-line no-restricted-globals
       location.href = '#/';
     } else {

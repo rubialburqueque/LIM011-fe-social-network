@@ -1,13 +1,9 @@
-let registers = [];
-let i = 0;
-
 export const correctRegister = (name, lastname, birthday, email, password, confirmPassword) => {
   if (name === '' || lastname === '' || birthday === '' || email === '' || password === '' || confirmPassword === '') {
     // eslint-disable-next-line no-alert
-    alert('Por favor completar campo');
+    alert('Por favor completar todos los campos');
   } else {
-    // eslint-disable-next-line no-console
-    console.log('register');
+
     registers = JSON.parse(localStorage.getItem('registro'));
 
 
