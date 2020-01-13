@@ -2,11 +2,11 @@ export const correctRegister = (name, lastname, birthday, email, password, confi
   if (name === '' || lastname === '' || birthday === '' || email === '' || password === '' || confirmPassword === '') {
     // eslint-disable-next-line no-alert
     alert('Por favor completar todos los campos');
-  } else {
-
-    registers = JSON.parse(localStorage.getItem('registro'));
   }
 };
+  //  else {
+  //  saveItemLocalStorage{
+
 
 export const AddObjRegisterToArray = (nameUser, lastnameUser, birthdayUser,
   emailUser, passwordUser, confirmPasswordUser, dataDeRegister) => {
@@ -17,15 +17,15 @@ export const AddObjRegisterToArray = (nameUser, lastnameUser, birthdayUser,
     correo: emailUser,
     contraseña: passwordUser,
     confirmarContraseña: confirmPasswordUser,
-};
+  };
 
   if (dataDeRegister === null) {
-const arrToRegister = [];
-dataDeRegister.push(registerObj);
+    const arrToRegister = [];
+    arrToRegister.push(registerObj);
     return arrToRegister;
-} 
-dataDeRegister.push(registerObj);
-  return dataDeRegister
+  }
+  dataDeRegister.push(registerObj);
+  return dataDeRegister;
 };
 // localStorage.setItem('registro', JSON.stringify(registers));
 

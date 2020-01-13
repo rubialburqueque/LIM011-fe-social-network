@@ -1,4 +1,6 @@
-import { correctRegister, getItemLocalStorage } from '../function.js';
+import {
+  correctRegister, getItemLocalStorage, AddObjRegisterToArray, saveItemLocalStorage } from '../function.js';
+
 
 export default () => {
   const viewRegister = `
@@ -27,10 +29,13 @@ export default () => {
   const formRegister = divElemt.querySelector('#formRegister');
   formRegister.addEventListener('submit', (event) => {
     event.preventDefault();
+    console.log(elementsRegister);
     const elementsRegister = formRegister.elements;
-    const dataDeRegister= JSON.parse(getItemLocalStorage('registro'))
-    if (elementoRegister.email.value === /\S+@\S+.\S+/ && elementsRegister.password.value.length >= 6 && 
-       elementsRegister.password.value === elementsRegister.confirmPassword.value) {
+    const requi = /\S+@\S+.S+/;
+    // const requi = /^\w+([\.\+\-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/;
+
+    if (elementsRegister.password.value.length >= 6
+      && elementsRegister.password.value === elementsRegister.confirmPassword.value) {
       if (requi.test(elementsRegister.email.value) === true) {
         correctRegister(elementsRegister.name.value,
           elementsRegister.lastName.value,
@@ -39,7 +44,10 @@ export default () => {
           elementsRegister.password.value,
           elementsRegister.confirmPassword.value);
       }
-      if()
+      const registro = elementsRegister;
+      const dataDeRegister = JSON.parse(getItemLocalStorage('registro'));
+      const ArrayNew = AddObjRegisterToArray(registro, dataDeRegister);
+      saveItemLocalStorage('registro', ArrayNew);
       // eslint-disable-next-line no-restricted-globals
       location.href = '#/';
     } else {
