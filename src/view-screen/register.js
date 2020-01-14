@@ -1,5 +1,6 @@
 import {
-  correctRegister, getItemLocalStorage, AddObjRegisterToArray, saveItemLocalStorage } from '../function.js';
+  correctRegister, getItemLocalStorage, AddObjRegisterToArray, saveItemLocalStorage,
+} from '../function.js';
 
 
 export default () => {
@@ -29,7 +30,6 @@ export default () => {
   const formRegister = divElemt.querySelector('#formRegister');
   formRegister.addEventListener('submit', (event) => {
     event.preventDefault();
-    console.log(elementsRegister);
     const elementsRegister = formRegister.elements;
     const requi = /\S+@\S+.S+/;
     // const requi = /^\w+([\.\+\-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/;
