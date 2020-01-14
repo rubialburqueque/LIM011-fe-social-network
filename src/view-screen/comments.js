@@ -41,15 +41,14 @@ export const elementoPost = (comentario, index) => {
       divPadrePosts.appendChild(newNodoPost);
     });
   });
-  function contadorCorazon(element, index) {
+  /* function contadorCorazon(element, index) {
     let contador = 0;
     divElemt.getElementById('contadorMeEncanta').onclick = function () {
       contador++;
       // eslint-disable-next-line no-alert
       alert(contadorCorazon);
     };
-  };
+  }; */
 
   return onlyComment;
 };
-

@@ -34,7 +34,6 @@ export default () => {
   const registers = JSON.parse(localStorage.getItem('registro'));
   const btnLogin = divElemt.querySelector('#login');
   // eslint-disable-next-line no-console
-  console.log(registers);
   btnLogin.addEventListener('click', (event) => {
     event.preventDefault();
     const emailUsuario = divElemt.querySelector('#userName').value;
