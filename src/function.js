@@ -1,8 +1,10 @@
 export const correctRegister = (name, lastname, birthday, email, password, confirmPassword) => {
   if (name === '' || lastname === '' || birthday === '' || email === '' || password === '' || confirmPassword === '') {
     // eslint-disable-next-line no-alert
-    alert('Por favor completar todos los campos');
+    return false;
+    /* alert('Por favor completar todos los campos'); */
   }
+  return true;
 };
   //  else {
   //  saveItemLocalStorage{
@@ -24,11 +26,10 @@ export const AddObjRegisterToArray = (nameUser, lastnameUser, birthdayUser,
     arrToRegister.push(registerObj);
     return arrToRegister;
   }
+  console.log(dataDeRegister);
   dataDeRegister.push(registerObj);
   return dataDeRegister;
 };
-// localStorage.setItem('registro', JSON.stringify(registers));
-
 
 /* obtener o guardar datos en localStorage */
 
@@ -42,9 +43,6 @@ export const saveItemLocalStorage = (nombreDeItem, dataParaGuardar) => {
 };
 
 export const agregaObjPostAlArr = (textoDelPost, dataDePosts, nombreDeUsuario) => {
-  // eslint-disable-next-line no-console
-  console.log('gfhgdh', dataDePosts);
-
   const objPost = {
     nombre: nombreDeUsuario,
     texto: textoDelPost,
@@ -56,6 +54,8 @@ export const agregaObjPostAlArr = (textoDelPost, dataDePosts, nombreDeUsuario) =
     arr.push(objPost);
     return arr;
   }
-  JSON.parse(dataDePosts.push(objPost));
+  dataDePosts.push(objPost);
   return dataDePosts;
 };
+
+export const suma = (a, b) => b + a;

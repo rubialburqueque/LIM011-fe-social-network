@@ -1,5 +1,6 @@
 import {
-  correctRegister, getItemLocalStorage, AddObjRegisterToArray, saveItemLocalStorage } from '../function.js';
+  correctRegister, getItemLocalStorage, AddObjRegisterToArray, saveItemLocalStorage,
+} from '../function.js';
 
 
 export default () => {
@@ -29,25 +30,32 @@ export default () => {
   const formRegister = divElemt.querySelector('#formRegister');
   formRegister.addEventListener('submit', (event) => {
     event.preventDefault();
-    console.log(elementsRegister);
     const elementsRegister = formRegister.elements;
-    const requi = /\S+@\S+.S+/;
+    const requi = /\S+@\S+.\S+/;
     // const requi = /^\w+([\.\+\-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/;
 
     if (elementsRegister.password.value.length >= 6
       && elementsRegister.password.value === elementsRegister.confirmPassword.value) {
       if (requi.test(elementsRegister.email.value) === true) {
-        correctRegister(elementsRegister.name.value,
-          elementsRegister.lastName.value,
-          elementsRegister.brithday.value,
-          elementsRegister.email.value,
-          elementsRegister.password.value,
-          elementsRegister.confirmPassword.value);
+        const nombre = divElemt.querySelector('#name').value;
+        const apellidos = divElemt.querySelector('#lastName').value;
+        const cumpleaños = divElemt.querySelector('#brithday').value;
+        const correo = divElemt.querySelector('#email').value;
+        const contraseña = divElemt.querySelector('#password').value;
+        const confirmarContraseña = divElemt.querySelector('#confirmPassword').value;
+        /* console.log(nombre, cumpleaños, apellidos, correo, contraseña, confirmarContraseña);
+        console.log(correctRegister(nombre, apellidos, cumpleaños,
+          correo, contraseña, confirmarContraseña)); */
+        if (correctRegister(nombre, apellidos, cumpleaños,
+          correo, contraseña, confirmarContraseña) === true) {
+          const dataDeRegister = JSON.parse(getItemLocalStorage('usuariosRegistrados'));
+          console.log(dataDeRegister);
+          const ArrayNew = AddObjRegisterToArray(nombre, apellidos, cumpleaños,
+            correo, contraseña, confirmarContraseña, dataDeRegister);
+          console.log(ArrayNew);
+          saveItemLocalStorage('usuariosRegistrados', ArrayNew);
+        }
       }
-      const registro = elementsRegister;
-      const dataDeRegister = JSON.parse(getItemLocalStorage('registro'));
-      const ArrayNew = AddObjRegisterToArray(registro, dataDeRegister);
-      saveItemLocalStorage('registro', ArrayNew);
       // eslint-disable-next-line no-restricted-globals
       location.href = '#/';
     } else {
