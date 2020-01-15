@@ -2,7 +2,6 @@ export const correctRegister = (name, lastname, birthday, email, password, confi
   if (name === '' || lastname === '' || birthday === '' || email === '' || password === '' || confirmPassword === '') {
     // eslint-disable-next-line no-alert
     return false;
-    /* alert('Por favor completar todos los campos'); */
   }
   return true;
 };
@@ -26,7 +25,7 @@ export const AddObjRegisterToArray = (nameUser, lastnameUser, birthdayUser,
     arrToRegister.push(registerObj);
     return arrToRegister;
   }
-  console.log(dataDeRegister);
+  // console.log(dataDeRegister);
   dataDeRegister.push(registerObj);
   return dataDeRegister;
 };
