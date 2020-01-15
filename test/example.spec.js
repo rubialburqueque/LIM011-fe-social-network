@@ -1,9 +1,18 @@
-import { agregaObjPostAlArr, suma } from '../src/function.js';
+import { agregaObjPostAlArr, AddObjRegisterToArray } from '../src/function.js';
 
 const prueba = {
   nombre: 'nombreUsuario',
   texto: 'textoUsuaio',
   fecha: new Date(),
+};
+
+const registro = {
+  nombre: 'nameUser',
+  apellido: 'lastnameUser',
+  cumpleaños: 'birthdayUser',
+  correo: 'emailUser',
+  contraseña: 'passwordUser',
+  confirmarContraseña: 'confirmPasswordUser',
 };
 
 describe('agregaObjPostAlArr', () => {
@@ -12,6 +21,17 @@ describe('agregaObjPostAlArr', () => {
   });
   it('deberia agregar un objeto y retorna un array', () => {
     expect(agregaObjPostAlArr(prueba.texto, null, prueba.nombre)).toHaveLength(1);
+  });
+});
+
+describe('AddObjRegisterToArray', () => {
+  it('debería ser una función', () => {
+    expect(typeof AddObjRegisterToArray).toBe('function');
+  });
+  it('deberia agregar un objeto y retorna un array', () => {
+    expect(AddObjRegisterToArray('nameUser', 'lastnameUser',
+      'birthdayUser', 'emailUser', 'passwordUser', 'confirmPasswordUser',
+      null)).toStrictEqual([registro]);
   });
 });
 

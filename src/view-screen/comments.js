@@ -11,7 +11,7 @@ export const elementoPost = (comentario, index) => {
         <h6 class="comment-name by-author">${comentario.nombre}</h6>
         <span>${date.toString()}</span>
         <i id="dssd" class="icon-user-secret iconClass"></i>
-        <button class="icon-pencil iconClass"></button>
+        <button id="edit-${index}"  class="icon-pencil iconClass"></button>
         <button id="delete-${index}" class="icon-trash-1 iconClass"></button>
       </section>
       <section class="comment-content">${comentario.texto}</section>
@@ -28,6 +28,27 @@ export const elementoPost = (comentario, index) => {
     const newPost = [];
     registroPosts.forEach((element, index1Post) => {
       if (index1Post !== index) {
+        newPost.push(element);
+      }
+    });
+    localStorage.setItem('posts', JSON.stringify(newPost));
+
+    const postsActuales = JSON.parse(localStorage.getItem('posts'));
+    const divPadrePosts = document.querySelector('#commits');
+    divPadrePosts.innerHTML = '';
+    postsActuales.forEach((element, indice) => {
+      const newNodoPost = elementoPost(element, indice);
+      divPadrePosts.appendChild(newNodoPost);
+    });
+  });
+  const registro = JSON.parse(localStorage.getItem('posts'));
+  const editPost = onlyComment.querySelector(`#edit-${index}`);
+  editPost.addEventListener('click', () => {
+    const newPost = '';
+    registro.forEach((element, index1Post) => {
+      if (index1Post === index) {
+        `<textea>index1Post.texto.value</textea>`
+        });
         newPost.push(element);
       }
     });
