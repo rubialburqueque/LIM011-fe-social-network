@@ -42,6 +42,28 @@ export default () => {
     const correo = divElemt.querySelector('#email').value;
     const contraseña = divElemt.querySelector('#password').value;
     const confirmarContraseña = divElemt.querySelector('#confirmPassword').value;
+    
+
+    if (correctRegister(nombre, apellidos, cumpleaños,
+      correo, contraseña, confirmarContraseña) === true) {
+      if (requi.test(elementsRegister.email.value) === true) {
+        if (elementsRegister.password.value.length >= 6
+      && elementsRegister.password.value === elementsRegister.confirmPassword.value) {
+          const dataDeRegister = JSON.parse(getItemLocalStorage('usuariosRegistrados'));
+          const ArrayNew = AddObjRegisterToArray(nombre, apellidos, cumpleaños,
+            correo, contraseña, confirmarContraseña, dataDeRegister);
+          saveItemLocalStorage('usuariosRegistrados', ArrayNew);
+          // eslint-disable-next-line no-restricted-globals
+          location.href = '#/';
+        } else {
+          divElemt.querySelector('#errorComtraseña').innerHTML = 'contraseña no valida';
+        }
+      } else {
+        divElemt.querySelector('#errorCorreo').innerHTML = 'correo no valido';
+      }
+    } else {
+      divElemt.querySelector('#errorComtraseña').innerHTML = 'llenar todos los campos';
+
 
     const verificaTodosDatos = () => {
       if (correctRegister) {
@@ -72,6 +94,7 @@ export default () => {
       saveItemLocalStorage('usuariosRegistrados', ArrayNew);
       // eslint-disable-next-line no-restricted-globals
       location.href = '#/';
+
     }
   });
   return divElemt;

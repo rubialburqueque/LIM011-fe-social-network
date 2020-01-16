@@ -42,7 +42,29 @@ export const elementoPost = (comentario, index) => {
       divPadrePosts.appendChild(newNodoPost);
     });
   });
-  const modificarComment = JSON.parse(localStorage.getItem('post'));
+  const registro = JSON.parse(localStorage.getItem('posts'));
+  const editPost = onlyComment.querySelector(`#edit-${index}`);
+  editPost.addEventListener('click', () => {
+    const newPost = '';
+    registro.forEach((element, index1Post) => {
+      if (index1Post === index) {
+        `<textea>index1Post.texto.value</textea>`
+        });
+        newPost.push(element);
+      }
+    });
+    
+    localStorage.setItem('posts', JSON.stringify(newPost));
+
+    const postsActuales = JSON.parse(localStorage.getItem('posts'));
+    const divPadrePosts = document.querySelector('#commits');
+    divPadrePosts.innerHTML = '';
+    postsActuales.forEach((element, indice) => {
+      const newNodoPost = elementoPost(element, indice);
+      divPadrePosts.appendChild(newNodoPost);
+    });
+  });
+const modificarComment = JSON.parse(localStorage.getItem('post'));
   const modifyComment = onlyComment.querySelector(`#modify-${index}`);
   modifyComment.addEventListener('click', () => {
     const newPostModify = '';
@@ -79,4 +101,8 @@ export const elementoPost = (comentario, index) => {
     localStorage.setItem('posts', JSON.stringify(reactionPostLove));
     return reactionPostLove;
   });
+
+
+  return onlyComment;
+
 };

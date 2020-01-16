@@ -1,13 +1,9 @@
 export const correctRegister = (name, lastname, birthday, email, password, confirmPassword) => {
   if (name === '' || lastname === '' || birthday === '' || email === '' || password === '' || confirmPassword === '') {
-    // eslint-disable-next-line no-alert
     return false;
   }
   return true;
 };
-  //  else {
-  //  saveItemLocalStorage{
-
 
 export const AddObjRegisterToArray = (nameUser, lastnameUser, birthdayUser,
   emailUser, passwordUser, confirmPasswordUser, dataDeRegister) => {
@@ -25,7 +21,6 @@ export const AddObjRegisterToArray = (nameUser, lastnameUser, birthdayUser,
     arrToRegister.push(registerObj);
     return arrToRegister;
   }
-  // console.log(dataDeRegister);
   dataDeRegister.push(registerObj);
   return dataDeRegister;
 };
@@ -40,6 +35,8 @@ export const getItemLocalStorage = (nombreDeItem) => {
 export const saveItemLocalStorage = (nombreDeItem, dataParaGuardar) => {
   localStorage.setItem(nombreDeItem, JSON.stringify(dataParaGuardar));
 };
+
+// crear un objeto post y subirlo a un array
 
 export const agregaObjPostAlArr = (textoDelPost, dataDePosts, nombreDeUsuario) => {
   const objPost = {
