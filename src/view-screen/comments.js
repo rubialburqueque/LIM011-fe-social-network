@@ -63,7 +63,7 @@ export const elementoPost = (comentario, index) => {
       const newNodoPost = elementoPost(element, indice);
       divPadrePosts.appendChild(newNodoPost);
     });
-  });
+  };
 const modificarComment = JSON.parse(localStorage.getItem('post'));
   const modifyComment = onlyComment.querySelector(`#modify-${index}`);
   modifyComment.addEventListener('click', () => {
