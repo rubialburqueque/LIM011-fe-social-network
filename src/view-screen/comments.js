@@ -15,6 +15,7 @@ export const elementoPost = (comentario, index) => {
         <button id="delete-${index}" class="icon-trash-1 iconClass"></button>
       </section>
       <section class="comment-content">${comentario.texto}</section>
+      <textarea id="story" name="story" rows="10" cols="20">${comentario.texto}</textarea>
       <section class="comment-opinion">
       <button class="icon-heart iconClass" id="reactionPostLove-${index}" onClick="reactionPostLove"></button>
       <button type="button" id="comentarComentario" <i class="icon-chat iconClass"></i>comentar</button>
@@ -48,11 +49,16 @@ export const elementoPost = (comentario, index) => {
     modificarComment.forEach((element, index1Post) => {
       if (index1Post === index) {
         registroPosts.texto.value}
-        .update(index);
+        // .update(index);
 
         newPostModify.push(element);
+
+        
       }
-    });
+    };
+
+
+    );
     localStorage.setItem('post', JSON.stringify(newPostModify));
   });
 
