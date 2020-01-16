@@ -52,6 +52,7 @@ export const elementoPost = (comentario, index) => {
         newPost.push(element);
       }
     });
+    
     localStorage.setItem('posts', JSON.stringify(newPost));
 
     const postsActuales = JSON.parse(localStorage.getItem('posts'));
@@ -62,6 +63,7 @@ export const elementoPost = (comentario, index) => {
       divPadrePosts.appendChild(newNodoPost);
     });
   });
+
   /* function contadorCorazon(element, index) {
     let contador = 0;
     divElemt.getElementById('contadorMeEncanta').onclick = function () {
