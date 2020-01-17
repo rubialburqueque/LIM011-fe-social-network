@@ -1,4 +1,4 @@
-import { agregaObjPostAlArr, AddObjRegisterToArray } from '../src/function.js';
+import { agregaObjPostAlArr, AddObjRegisterToArray, correctRegister } from '../src/function.js';
 
 const prueba = {
   nombre: 'nombreUsuario',
@@ -34,6 +34,16 @@ describe('AddObjRegisterToArray', () => {
       null)).toStrictEqual([registro]);
   });
 });
+
+describe('correctRegister', () => {
+  it('debería ser una función', () => {
+    expect(typeof correctRegister).toBe('function');
+  });
+  it('cuando los imput estan vacios retorna false y si  tiene contenido retorna true', () => {
+    expect(correctRegister('')).toStrictEqual(false);
+  });
+});
+
 
 /* describe('suma', () => {
   it('Yo espero que para 3 y 4 retorne 7', () => {

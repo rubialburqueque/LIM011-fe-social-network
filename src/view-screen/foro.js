@@ -38,6 +38,7 @@ export default () => {
     saveItemLocalStorage('posts', arrNuevo);
     dataDePosts.forEach((dataDeUnPost, index) => {
       const nodoPost = elementoPost(dataDeUnPost, index);
+      console.log(nodoPost);
       divElemt.querySelector('#commits').appendChild(nodoPost);
     });
   });

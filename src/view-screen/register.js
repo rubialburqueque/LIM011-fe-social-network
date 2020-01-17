@@ -22,12 +22,13 @@ export default () => {
         <input type="password" id="confirmPassword" class="inputs-register"></br>
         <p id = "errorComtraseña"></p>
         <input type="submit" class="button">
-    </form>
+        </form>
 </div>`;
 
   const divElemt = document.createElement('div');
   divElemt.classList.add('css-register');
   divElemt.innerHTML = viewRegister;
+
 
   const formRegister = divElemt.querySelector('#formRegister');
   formRegister.addEventListener('submit', (event) => {
@@ -46,7 +47,10 @@ export default () => {
       if (requi.test(elementsRegister.email.value) === true) {
         if (elementsRegister.password.value.length >= 6
       && elementsRegister.password.value === elementsRegister.confirmPassword.value) {
-          const dataDeRegister = JSON.parse(getItemLocalStorage('usuariosRegistrados'));
+          let dataDeRegister = [];
+          if (getItemLocalStorage('usuariosRegistrados') !== 'undefined') {
+            dataDeRegister = JSON.parse(getItemLocalStorage('usuariosRegistrados'));
+          }
           const ArrayNew = AddObjRegisterToArray(nombre, apellidos, cumpleaños,
             correo, contraseña, confirmarContraseña, dataDeRegister);
           saveItemLocalStorage('usuariosRegistrados', ArrayNew);
