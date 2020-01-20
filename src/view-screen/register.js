@@ -35,7 +35,7 @@ export default () => {
     event.preventDefault();
     const elementsRegister = formRegister.elements;
     const requi = /\S+@\S+.\S+/;
-    // const requi = /^\w+([\.\+\-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/;
+    // const requi = /^\w+([\.\+\-]?\w+)@\w+([\.-]?\w+)(\.\w{2,4})+$/;
     const nombre = divElemt.querySelector('#name').value;
     const apellidos = divElemt.querySelector('#lastName').value;
     const cumpleaños = divElemt.querySelector('#brithday').value;
