@@ -46,7 +46,6 @@ export default () => {
       === emailUsuario && usuariosRegistrados.contraseña === contraseñaUsuario);
     if (usuarios.length >= 1) {
       saveItemLocalStorage('nombreUsuario', usuarios[0].nombre);
-      saveItemLocalStorage('idUsuario', usuarios[0].id);
       // eslint-disable-next-line no-restricted-globals
       location.href = '#/foro';
     } else {

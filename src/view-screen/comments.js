@@ -17,7 +17,10 @@ export const elementoPost = (comentario, index) => {
         <button id="delete-${index}" class="icon-trash-1 iconClass"></button>
       </section>
       <section class="comment-content">${comentario.texto}</section>
+      <section id="ModifyComment" class ="none">
       <textarea id="story" name="story" rows="10" cols="20">${comentario.texto}</textarea>
+      <input id="modify" type="button" value="modificar" class="button">
+      </section>
       <section class="comment-opinion">
       <button class="icon-heart iconClass" id="reactionPostLove-${index}" onClick="reactionPostLove"></button>
       <button type="button" id="comentarComentario" <i class="icon-chat iconClass"></i>comentar</button>
@@ -35,38 +38,39 @@ export const elementoPost = (comentario, index) => {
       }
     });
     saveItemLocalStorage('posts', JSON.stringify(newPost));
-
     const postsActuales = JSON.parse(getItemLocalStorage('posts'));
     const divPadrePosts = document.querySelector('#commits');
     divPadrePosts.innerHTML = '';
     postsActuales.forEach((element, indice) => {
       const newNodoPost = elementoPost(element, indice);
-      console.log(divPadrePosts);
-      console.log(newNodoPost);
       divPadrePosts.appendChild(newNodoPost);
     });
   });
 
   // esditar post
-  const registro = JSON.parse(localStorage.getItem('posts'));
+
   const editPost = onlyComment.querySelector(`#modify-${index}`);
   editPost.addEventListener('click', () => {
-    const newPost = [];
+    const registro = JSON.parse(localStorage.getItem('posts'));
     registro.forEach((element, index1Post) => {
       if (index1Post === index) {
-        newPost.push(element);
+        onlyComment.querySelector(`#modify-${index}`).classList.add('none');
+        onlyComment.querySelector('#ModifyComment').classList.remove('none');
+        /* newPost.push(element); */
       }
     });
-
-    localStorage.setItem('posts', JSON.stringify(newPost));
-
-    const postsActuales = JSON.parse(localStorage.getItem('posts'));
-    const divPadrePosts = document.querySelector('#commits');
-    divPadrePosts.innerHTML = '';
-    postsActuales.forEach((element, indice) => {
-      const newNodoPost = elementoPost(element, indice);
-      divPadrePosts.appendChild(newNodoPost);
-    });
   });
+  const savePostEdit = onlyComment.querySelector('#modify');
+  savePostEdit.addEventListener('click', () => {
+    const registro = JSON.parse(localStorage.getItem('posts'));
+    registro.forEach((element, index1Post) => {
+      if (index1Post === index) {
+        // eslint-disable-next-line no-param-reassign
+        element.texto = onlyComment.querySelector('#story').value;
+      }
+    });
+    localStorage.setItem('posts', JSON.stringify(registro));
+  });
+
   return onlyComment;
 };

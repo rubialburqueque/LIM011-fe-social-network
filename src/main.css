@@ -278,3 +278,6 @@ color:black;
   width: 700px;
   height: 90px;
 }
+.none {
+  display: none !important;
+}
