@@ -37,7 +37,7 @@ export default () => {
     }
     const nombre = getItemLocalStorage('nombreUsuario');
     const tipoDePost = divElemt.querySelector('#publicOrNot').value;
-    const arrNuevo = agregaObjPostAlArr(post, dataDePosts, nombre, tipoDePost);
+    const arrNuevo = agregaObjPostAlArr(post, dataDePosts, nombre, tipoDePost, 0);
     saveItemLocalStorage('posts', arrNuevo);
     divElemt.querySelector('#commits').innerHTML = '';
     dataDePosts.forEach((dataDeUnPost, index) => {
