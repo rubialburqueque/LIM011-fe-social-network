@@ -11,8 +11,8 @@ export default () => {
     <input id="commit" class="ePosts" type="text" placeholder="¿Qué estás pensando?">
     </br>
     <select id="publicOrNot">
-    <option value="publico">Comentario Público</option>
-    <option value="privado">Comentario Privado</option>
+    <option value="publico">Público</option>
+    <option value="privado">Privado</option>
     </select>
     <button type="button" class="button"  id="share">compartir</button>
     <div>
@@ -35,9 +35,9 @@ export default () => {
     if (getItemLocalStorage('posts') !== 'undefined') {
       dataDePosts = JSON.parse(getItemLocalStorage('posts'));
     }
-    /* const dataDePosts = JSON.parse(getItemLocalStorage('posts')); */
     const nombre = getItemLocalStorage('nombreUsuario');
-    const arrNuevo = agregaObjPostAlArr(post, dataDePosts, nombre);
+    const tipoDePost = divElemt.querySelector('#publicOrNot').value;
+    const arrNuevo = agregaObjPostAlArr(post, dataDePosts, nombre, tipoDePost);
     saveItemLocalStorage('posts', arrNuevo);
     divElemt.querySelector('#commits').innerHTML = '';
     dataDePosts.forEach((dataDeUnPost, index) => {
@@ -45,5 +45,6 @@ export default () => {
       divElemt.querySelector('#commits').appendChild(nodoPost);
     });
   });
+
   return divElemt;
 };

@@ -4,6 +4,8 @@ export const elementoPost = (comentario, index) => {
   const onlyComment = document.createElement('div');
   onlyComment.classList.add('publicaciones');
   const date = new Date(comentario.fecha);
+  const textoTipoPost = comentario.tipo === 'privado'
+    ? '<i id="private" class="icon-user-secret iconClass"></i>' : '';
   onlyComment.innerHTML = `
       <!-- Avatar -->
       <figure class="comment-avatar"> <img src="./imagen/usuario.png" alt=""/> </figure>
@@ -12,7 +14,7 @@ export const elementoPost = (comentario, index) => {
       <section class="comment-head iconClass">
         <h6 class="comment-name by-author">${comentario.nombre}</h6>
         <span>${date.toString().slice(3, -40)}</span>
-        <i id="dssd" class="icon-user-secret iconClass"></i>
+        ${textoTipoPost}
         <button id="modify-${index}" class="icon-pencil iconClass" ></button>
         <button id="delete-${index}" class="icon-trash-1 iconClass"></button>
       </section>
@@ -51,7 +53,7 @@ export const elementoPost = (comentario, index) => {
 
   const editPost = onlyComment.querySelector(`#modify-${index}`);
   editPost.addEventListener('click', () => {
-    const registro = JSON.parse(localStorage.getItem('posts'));
+    const registro = JSON.parse(getItemLocalStorage('posts'));
     registro.forEach((element, index1Post) => {
       if (index1Post === index) {
         onlyComment.querySelector(`#modify-${index}`).classList.add('none');
@@ -62,14 +64,21 @@ export const elementoPost = (comentario, index) => {
   });
   const savePostEdit = onlyComment.querySelector('#modify');
   savePostEdit.addEventListener('click', () => {
-    const registro = JSON.parse(localStorage.getItem('posts'));
+    const registro = JSON.parse(getItemLocalStorage('posts'));
     registro.forEach((element, index1Post) => {
       if (index1Post === index) {
         // eslint-disable-next-line no-param-reassign
         element.texto = onlyComment.querySelector('#story').value;
       }
     });
-    localStorage.setItem('posts', JSON.stringify(registro));
+    saveItemLocalStorage('posts', JSON.stringify(registro));
+    const postsActuales = JSON.parse(getItemLocalStorage('posts'));
+    const divPadrePosts = document.querySelector('#commits');
+    divPadrePosts.innerHTML = '';
+    postsActuales.forEach((element, indice) => {
+      const newNodoPost = elementoPost(element, indice);
+      divPadrePosts.appendChild(newNodoPost);
+    });
   });
 
   return onlyComment;

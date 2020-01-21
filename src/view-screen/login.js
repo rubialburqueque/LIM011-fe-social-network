@@ -4,7 +4,7 @@ export default () => {
   const viewHome = `
     <section class ="wrapper" id="home">
     <div class="imgLogin">
-    <h1><img src="./imagen/computadora.png"> </h1>
+    <img src="./imagen/girl power.jpeg" class = "img-princial">
     </div>
     <div class="partLogin">
       <p>!Bienvenida!</p>

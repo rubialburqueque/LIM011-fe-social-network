@@ -33,17 +33,18 @@ export const getItemLocalStorage = (nombreDeItem) => {
 };
 
 export const saveItemLocalStorage = (nombreDeItem, dataParaGuardar) => {
-  localStorage.setItem(nombreDeItem,
+  localStorage.setItem((typeof (nombreDeItem) === 'string') ? nombreDeItem : JSON.stringify(nombreDeItem),
     (typeof (dataParaGuardar) === 'string') ? dataParaGuardar : JSON.stringify(dataParaGuardar));
 };
 
 // crear un objeto post y subirlo a un array
 
-export const agregaObjPostAlArr = (textoDelPost, dataDePosts, nombreDeUsuario) => {
+export const agregaObjPostAlArr = (textoDelPost, dataDePosts, nombreDeUsuario, tipoDePost) => {
   const objPost = {
     nombre: nombreDeUsuario,
     texto: textoDelPost,
     fecha: new Date(),
+    tipo: tipoDePost,
   };
 
   if (dataDePosts === null) {
