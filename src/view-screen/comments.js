@@ -1,3 +1,5 @@
+import { getItemLocalStorage, saveItemLocalStorage } from '../function.js';
+
 export const elementoPost = (comentario, index) => {
   const onlyComment = document.createElement('div');
   onlyComment.classList.add('publicaciones');
@@ -16,8 +18,8 @@ export const elementoPost = (comentario, index) => {
       </section>
       <section class="comment-content">${comentario.texto}</section>
       <section id="ModifyComment" class ="none">
-      <textarea id="ModifyPost" rows="10" cols="95">${comentario.texto}</textarea>
-      <input id="login" type="button" value="modificar" class="button">
+      <textarea id="story" name="story" rows="10" cols="20">${comentario.texto}</textarea>
+      <input id="modify" type="button" value="modificar" class="button">
       </section>
       <section class="comment-opinion">
       <button class="icon-heart iconClass" id="reactionPostLove-${index}" onClick="reactionPostLove"></button>
@@ -25,9 +27,8 @@ export const elementoPost = (comentario, index) => {
       </section>
     </div>
   </div> `;
-
-  // eliminar post//
-  const registroPosts = JSON.parse(localStorage.getItem('posts'));
+  // eliminar post
+  const registroPosts = JSON.parse(getItemLocalStorage('posts'));
   const deletePost = onlyComment.querySelector(`#delete-${index}`);
   deletePost.addEventListener('click', () => {
     const newPost = [];
@@ -36,9 +37,8 @@ export const elementoPost = (comentario, index) => {
         newPost.push(element);
       }
     });
-    localStorage.setItem('posts', JSON.stringify(newPost));
-
-    const postsActuales = JSON.parse(localStorage.getItem('posts'));
+    saveItemLocalStorage('posts', JSON.stringify(newPost));
+    const postsActuales = JSON.parse(getItemLocalStorage('posts'));
     const divPadrePosts = document.querySelector('#commits');
     divPadrePosts.innerHTML = '';
     postsActuales.forEach((element, indice) => {
@@ -47,35 +47,30 @@ export const elementoPost = (comentario, index) => {
     });
   });
 
-  // modificar post
-  const registro = JSON.parse(localStorage.getItem('posts'));
+  // esditar post
+
   const editPost = onlyComment.querySelector(`#modify-${index}`);
   editPost.addEventListener('click', () => {
+    const registro = JSON.parse(localStorage.getItem('posts'));
     registro.forEach((element, index1Post) => {
       if (index1Post === index) {
         onlyComment.querySelector(`#modify-${index}`).classList.add('none');
-        onlyComment.querySelector('#modifyComment').classList.remove('none');
-        // eslint-disable-next-line no-console
-        console.log(element);
+        onlyComment.querySelector('#ModifyComment').classList.remove('none');
+        /* newPost.push(element); */
       }
-      return true;
     });
   });
-  // const registerReactionCountLove = JSON.parse(localStorage.getItem('posts'));
-  // const reactionPostLove = onlyComment.querySelector(`#reactionPostLove-${index}`);
-  // reactionPostLove.addEventListener('click', () => {
-  //   const reactionPostLove = '';
-  //   registerReactionCountLove.forEach((post, index1love) => {
-  //     if (index1love % 2 === 0) {
-  //       // eslint-disable-next-line no-const-assign
-  //       console.log(reactionPostLove = +1);
-  //     } if (index1love % 2 !== 0) {
-  //       // eslint-disable-next-line no-console
-  //       console.log(reactionPostLove = -1);
-  //     }
-  //   });
-  //   localStorage.setItem('posts', JSON.stringify(reactionPostLove));
-  //   return reactionPostLove;
-  // });
+  const savePostEdit = onlyComment.querySelector('#modify');
+  savePostEdit.addEventListener('click', () => {
+    const registro = JSON.parse(localStorage.getItem('posts'));
+    registro.forEach((element, index1Post) => {
+      if (index1Post === index) {
+        // eslint-disable-next-line no-param-reassign
+        element.texto = onlyComment.querySelector('#story').value;
+      }
+    });
+    localStorage.setItem('posts', JSON.stringify(registro));
+  });
+
   return onlyComment;
 };

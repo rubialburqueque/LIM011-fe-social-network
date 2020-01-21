@@ -1,4 +1,4 @@
-import { getItemLocalStorage } from '../function.js';
+import { getItemLocalStorage, saveItemLocalStorage } from '../function.js';
 
 export default () => {
   const viewHome = `
@@ -32,17 +32,20 @@ export default () => {
   const divElemt = document.createElement('div');
   divElemt.innerHTML = viewHome;
   // divElemt.className='wrapper';
-  const registers = JSON.parse(getItemLocalStorage('usuariosRegistrados'));
+  let registers = [];
+  if (getItemLocalStorage('usuariosRegistrados') !== 'undefined') {
+    registers = JSON.parse(getItemLocalStorage('usuariosRegistrados'));
+  }
+
   const btnLogin = divElemt.querySelector('#login');
   btnLogin.addEventListener('click', (event) => {
     event.preventDefault();
     const emailUsuario = divElemt.querySelector('#userName').value;
     const contraseñaUsuario = divElemt.querySelector('#password').value;
-    const usuarios = registers.filter(usuariosRegistrados => usuariosRegistrados.correo === emailUsuario
-      && usuariosRegistrados.contraseña === contraseñaUsuario);
+    const usuarios = registers.filter(usuariosRegistrados => usuariosRegistrados.correo
+      === emailUsuario && usuariosRegistrados.contraseña === contraseñaUsuario);
     if (usuarios.length >= 1) {
-      localStorage.setItem('nombreUsuario', usuarios[0].nombre);
-      localStorage.setItem('idUsuario', usuarios[0].id);
+      saveItemLocalStorage('nombreUsuario', usuarios[0].nombre);
       // eslint-disable-next-line no-restricted-globals
       location.href = '#/foro';
     } else {

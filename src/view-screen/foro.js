@@ -26,16 +26,20 @@ export default () => {
   /* divElemt.classList.add('position'); */
   divElemt.innerHTML = viewForo;
 
-  divElemt.querySelector('#nombre').innerHTML = localStorage.getItem('nombreUsuario');
+  divElemt.querySelector('#nombre').innerHTML = getItemLocalStorage('nombreUsuario');
 
   const btnCompartir = divElemt.querySelector('#share');
-
   btnCompartir.addEventListener('click', () => {
     const post = divElemt.querySelector('#commit').value;
-    const dataDePosts = JSON.parse(getItemLocalStorage('posts'));
+    let dataDePosts = [];
+    if (getItemLocalStorage('posts') !== 'undefined') {
+      dataDePosts = JSON.parse(getItemLocalStorage('posts'));
+    }
+    /* const dataDePosts = JSON.parse(getItemLocalStorage('posts')); */
     const nombre = getItemLocalStorage('nombreUsuario');
     const arrNuevo = agregaObjPostAlArr(post, dataDePosts, nombre);
     saveItemLocalStorage('posts', arrNuevo);
+    divElemt.querySelector('#commits').innerHTML = '';
     dataDePosts.forEach((dataDeUnPost, index) => {
       const nodoPost = elementoPost(dataDeUnPost, index);
       divElemt.querySelector('#commits').appendChild(nodoPost);
