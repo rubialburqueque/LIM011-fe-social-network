@@ -82,10 +82,11 @@ export const elementoPost = (comentario, index) => {
   });
 
   // me gusta
-  // let contadorLove = 0;
-  const registerReactionCountLove = JSON.parse(localStorage.getItem('posts'));
+
+
   const reactionPostLove = onlyComment.querySelector(`#reactionPostLove-${index}`);
   reactionPostLove.addEventListener('click', () => {
+    const registerReactionCountLove = JSON.parse(localStorage.getItem('posts'));
     const nuevoArr = [];
     registerReactionCountLove.forEach((element, index1love) => {
       if (index1love === index) {
